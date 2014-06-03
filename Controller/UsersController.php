@@ -110,17 +110,15 @@ class UsersController extends AppController {
 
     public function login() {
         if ($this->request->is('post')) {
+            if ($this->Session->read('Auth.User')) {
+                $this->Session->setFlash('You are logged in!');
+                return $this->redirect('/');
+            }
             if ($this->Auth->login()) {
-                $this->Session->setFlash(__('Welcome.'));
                 return $this->redirect($this->Auth->redirect());
-            } 
-                $this->Session->setFlash(__('Your username or password was incorrect.'));
-            
+            }
+            $this->Session->setFlash(__('Your username or password was incorrect.'));
         }
-//        if ($this->Session->read('Auth.User')) {
-//            $this->Session->setFlash('You are already logged in!');
-//            return $this->redirect('/');
-//        }
     }
 
     public function logout() {
@@ -136,23 +134,23 @@ class UsersController extends AppController {
     public function initDB() {
         $group = $this->User->Group;
 // Allow admins to everything
-        $group->id = 1;
+        $group->id = 4;
         $this->Acl->allow($group, 'controllers');
 // allow managers to posts and widgets
-        $group->id = 2;
+        $group->id = 6;
         $this->Acl->deny($group, 'controllers');
         $this->Acl->allow($group, 'controllers/Entradas');
         $this->Acl->allow($group, 'controllers/Widgets');
         $this->Acl->allow($group, 'controllers/Mods');
 // allow users to only add and edit on posts and widgets
-        $group->id = 3;
+        $group->id = 5;
         $this->Acl->deny($group, 'controllers');
         $this->Acl->allow($group, 'controllers/Entradas/add');
         $this->Acl->allow($group, 'controllers/Entradas/edit');
-        $this->Acl->allow($group, 'controllers/Widgets/add');
-        $this->Acl->allow($group, 'controllers/Widgets/edit');
         $this->Acl->allow($group, 'controllers/Mods/add');
         $this->Acl->allow($group, 'controllers/Mods/edit');
+        $this->Acl->allow($group, 'controllers/Widgets/add');
+        $this->Acl->allow($group, 'controllers/Widgets/edit');
 // allow basic users to log out
         $this->Acl->allow($group, 'controllers/users/logout');
 // we add an exit to avoid an ugly "missing views" error message

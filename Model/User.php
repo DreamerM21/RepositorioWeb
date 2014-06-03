@@ -66,15 +66,16 @@ class User extends AppModel {
      *
      * @var array
      */
-    public $belongsTo = array(
-        'Group' => array(
-            'className' => 'Group',
-            'foreignKey' => 'group_id',
-            'conditions' => '',
-            'fields' => '',
-            'order' => ''
-        )
-    );
+//    public $belongsTo = array(
+//        'Group' => array(
+//            'className' => 'Group',
+//            'foreignKey' => 'group_id',
+//            'conditions' => '',
+//            'fields' => '',
+//            'order' => ''
+//        )
+//    );
+    public $belongsTo = array('Group');
 
     /**
      * hasMany associations
@@ -117,7 +118,6 @@ class User extends AppModel {
         return true;
     }
 
-//    public $actsAs = array('Acl' => array('type' => 'requester', 'enabled' => false));
     public $actsAs = array('Acl' => array('type' => 'requester'));
 
     public function parentNode() {
@@ -135,10 +135,5 @@ class User extends AppModel {
             return array('Group' => array('id' => $groupId));
         }
     }
-
-//    public function bindNode($user) {
-//        return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
-//    }
-
 
 }
