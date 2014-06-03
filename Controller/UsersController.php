@@ -113,14 +113,14 @@ class UsersController extends AppController {
             if ($this->Auth->login()) {
                 $this->Session->setFlash(__('Welcome.'));
                 return $this->redirect($this->Auth->redirect());
-            } else {
+            } 
                 $this->Session->setFlash(__('Your username or password was incorrect.'));
-            }
+            
         }
-        if ($this->Session->read('Auth.User')) {
-            $this->Session->setFlash('You are already logged in!');
-            return $this->redirect('/');
-        }
+//        if ($this->Session->read('Auth.User')) {
+//            $this->Session->setFlash('You are already logged in!');
+//            return $this->redirect('/');
+//        }
     }
 
     public function logout() {

@@ -104,10 +104,10 @@ class GroupsController extends AppController {
         return $this->redirect(array('action' => 'index'));
     }
 
-    public function beforeFilter() {
-        parent::beforeFilter();
-// For CakePHP 2.1 and up
-        $this->Auth->allow();
-    }
+//    public function beforeFilter() {
+//        parent::beforeFilter();
+//// For CakePHP 2.1 and up
+//        $this->Auth->allow();
+//    }
 
 }

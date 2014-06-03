@@ -117,7 +117,8 @@ class User extends AppModel {
         return true;
     }
 
-    public $actsAs = array('Acl' => array('type' => 'requester', 'enabled' => false));
+//    public $actsAs = array('Acl' => array('type' => 'requester', 'enabled' => false));
+    public $actsAs = array('Acl' => array('type' => 'requester'));
 
     public function parentNode() {
         if (!$this->id && empty($this->data)) {
@@ -135,9 +136,9 @@ class User extends AppModel {
         }
     }
 
-    public function bindNode($user) {
-        return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
-    }
+//    public function bindNode($user) {
+//        return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
+//    }
 
 
 }
