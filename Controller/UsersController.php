@@ -110,10 +110,10 @@ class UsersController extends AppController {
 
     public function login() {
         if ($this->request->is('post')) {
-            if ($this->Session->read('Auth.User')) {
-                $this->Session->setFlash('You are logged in!');
-                return $this->redirect('/');
-            }
+//            if ($this->Session->read('Auth.User')) {
+//                $this->Session->setFlash('You are logged in!');
+//                return $this->redirect('/');
+//            }
             if ($this->Auth->login()) {
                 return $this->redirect($this->Auth->redirect());
             }
@@ -134,16 +134,17 @@ class UsersController extends AppController {
     public function initDB() {
         $group = $this->User->Group;
 // Allow admins to everything
-        $group->id = 4;
+        $group->id = 1;
         $this->Acl->allow($group, 'controllers');
 // allow managers to posts and widgets
-        $group->id = 6;
+        $group->id = 2;
         $this->Acl->deny($group, 'controllers');
         $this->Acl->allow($group, 'controllers/Entradas');
         $this->Acl->allow($group, 'controllers/Widgets');
         $this->Acl->allow($group, 'controllers/Mods');
+        $this->Acl->allow($group, 'controllers/users/logout');
 // allow users to only add and edit on posts and widgets
-        $group->id = 5;
+        $group->id = 3;
         $this->Acl->deny($group, 'controllers');
         $this->Acl->allow($group, 'controllers/Entradas/add');
         $this->Acl->allow($group, 'controllers/Entradas/edit');

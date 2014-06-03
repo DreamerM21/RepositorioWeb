@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2014 a las 19:40:03
+-- Tiempo de generación: 04-06-2014 a las 01:54:48
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -25,8 +25,6 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `acos`
 --
--- Creación: 31-05-2014 a las 09:08:51
---
 
 CREATE TABLE IF NOT EXISTS `acos` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -37,60 +35,59 @@ CREATE TABLE IF NOT EXISTS `acos` (
   `lft` int(10) DEFAULT NULL,
   `rght` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
 
 --
 -- Volcado de datos para la tabla `acos`
 --
 
 INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `rght`) VALUES
-(1, NULL, NULL, NULL, 'controllers', 1, 80),
-(2, 1, NULL, NULL, 'Entradas', 2, 13),
-(3, 2, NULL, NULL, 'index', 3, 4),
-(4, 2, NULL, NULL, 'view', 5, 6),
-(5, 2, NULL, NULL, 'add', 7, 8),
-(6, 2, NULL, NULL, 'edit', 9, 10),
-(7, 2, NULL, NULL, 'delete', 11, 12),
-(8, 1, NULL, NULL, 'Groups', 14, 25),
-(9, 8, NULL, NULL, 'index', 15, 16),
-(10, 8, NULL, NULL, 'view', 17, 18),
-(11, 8, NULL, NULL, 'add', 19, 20),
-(12, 8, NULL, NULL, 'edit', 21, 22),
-(13, 8, NULL, NULL, 'delete', 23, 24),
-(14, 1, NULL, NULL, 'Mods', 26, 37),
-(15, 14, NULL, NULL, 'index', 27, 28),
-(16, 14, NULL, NULL, 'view', 29, 30),
-(17, 14, NULL, NULL, 'add', 31, 32),
-(18, 14, NULL, NULL, 'edit', 33, 34),
-(19, 14, NULL, NULL, 'delete', 35, 36),
-(20, 1, NULL, NULL, 'Pages', 38, 41),
-(21, 20, NULL, NULL, 'display', 39, 40),
-(22, 1, NULL, NULL, 'Users', 42, 57),
-(23, 22, NULL, NULL, 'index', 43, 44),
-(24, 22, NULL, NULL, 'view', 45, 46),
-(25, 22, NULL, NULL, 'add', 47, 48),
-(26, 22, NULL, NULL, 'edit', 49, 50),
-(27, 22, NULL, NULL, 'delete', 51, 52),
-(28, 22, NULL, NULL, 'login', 53, 54),
-(29, 22, NULL, NULL, 'logout', 55, 56),
-(30, 1, NULL, NULL, 'Widgets', 58, 69),
-(31, 30, NULL, NULL, 'index', 59, 60),
-(32, 30, NULL, NULL, 'view', 61, 62),
-(33, 30, NULL, NULL, 'add', 63, 64),
-(34, 30, NULL, NULL, 'edit', 65, 66),
-(35, 30, NULL, NULL, 'delete', 67, 68),
-(36, 1, NULL, NULL, 'AclExtras', 70, 71),
-(37, 1, NULL, NULL, 'DebugKit', 72, 79),
-(38, 37, NULL, NULL, 'ToolbarAccess', 73, 78),
-(39, 38, NULL, NULL, 'history_state', 74, 75),
-(40, 38, NULL, NULL, 'sql_explain', 76, 77);
+(1, NULL, NULL, NULL, 'controllers', 1, 2),
+(2, NULL, NULL, NULL, 'controllers', 3, 82),
+(3, 2, NULL, NULL, 'Entradas', 4, 15),
+(4, 3, NULL, NULL, 'index', 5, 6),
+(5, 3, NULL, NULL, 'view', 7, 8),
+(6, 3, NULL, NULL, 'add', 9, 10),
+(7, 3, NULL, NULL, 'edit', 11, 12),
+(8, 3, NULL, NULL, 'delete', 13, 14),
+(9, 2, NULL, NULL, 'Groups', 16, 27),
+(10, 9, NULL, NULL, 'index', 17, 18),
+(11, 9, NULL, NULL, 'view', 19, 20),
+(12, 9, NULL, NULL, 'add', 21, 22),
+(13, 9, NULL, NULL, 'edit', 23, 24),
+(14, 9, NULL, NULL, 'delete', 25, 26),
+(15, 2, NULL, NULL, 'Mods', 28, 39),
+(16, 15, NULL, NULL, 'index', 29, 30),
+(17, 15, NULL, NULL, 'view', 31, 32),
+(18, 15, NULL, NULL, 'add', 33, 34),
+(19, 15, NULL, NULL, 'edit', 35, 36),
+(20, 15, NULL, NULL, 'delete', 37, 38),
+(21, 2, NULL, NULL, 'Pages', 40, 43),
+(22, 21, NULL, NULL, 'display', 41, 42),
+(23, 2, NULL, NULL, 'Users', 44, 59),
+(24, 23, NULL, NULL, 'index', 45, 46),
+(25, 23, NULL, NULL, 'view', 47, 48),
+(26, 23, NULL, NULL, 'add', 49, 50),
+(27, 23, NULL, NULL, 'edit', 51, 52),
+(28, 23, NULL, NULL, 'delete', 53, 54),
+(29, 23, NULL, NULL, 'login', 55, 56),
+(30, 23, NULL, NULL, 'logout', 57, 58),
+(31, 2, NULL, NULL, 'Widgets', 60, 71),
+(32, 31, NULL, NULL, 'index', 61, 62),
+(33, 31, NULL, NULL, 'view', 63, 64),
+(34, 31, NULL, NULL, 'add', 65, 66),
+(35, 31, NULL, NULL, 'edit', 67, 68),
+(36, 31, NULL, NULL, 'delete', 69, 70),
+(37, 2, NULL, NULL, 'AclExtras', 72, 73),
+(38, 2, NULL, NULL, 'DebugKit', 74, 81),
+(39, 38, NULL, NULL, 'ToolbarAccess', 75, 80),
+(40, 39, NULL, NULL, 'history_state', 76, 77),
+(41, 39, NULL, NULL, 'sql_explain', 78, 79);
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `aros`
---
--- Creación: 31-05-2014 a las 09:08:51
 --
 
 CREATE TABLE IF NOT EXISTS `aros` (
@@ -102,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `aros` (
   `lft` int(10) DEFAULT NULL,
   `rght` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `aros`
@@ -112,16 +109,16 @@ INSERT INTO `aros` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 (1, NULL, 'Group', 1, NULL, 1, 4),
 (2, NULL, 'Group', 2, NULL, 5, 8),
 (3, NULL, 'Group', 3, NULL, 9, 12),
-(4, 1, 'User', 1, NULL, 2, 3),
-(5, 2, 'User', 2, NULL, 6, 7),
-(6, 3, 'User', 3, NULL, 10, 11);
+(4, NULL, 'Group', 4, NULL, 13, 14),
+(5, NULL, 'Group', 5, NULL, 15, 16),
+(6, 1, 'User', 1, NULL, 2, 3),
+(7, 3, 'User', 2, NULL, 10, 11),
+(8, 2, 'User', 3, NULL, 6, 7);
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `aros_acos`
---
--- Creación: 31-05-2014 a las 09:08:52
 --
 
 CREATE TABLE IF NOT EXISTS `aros_acos` (
@@ -134,33 +131,41 @@ CREATE TABLE IF NOT EXISTS `aros_acos` (
   `_delete` varchar(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `ARO_ACO_KEY` (`aro_id`,`aco_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Volcado de datos para la tabla `aros_acos`
 --
 
 INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_create`, `_read`, `_update`, `_delete`) VALUES
-(1, 1, 1, '1', '1', '1', '1'),
-(2, 2, 1, '-1', '-1', '-1', '-1'),
-(3, 2, 30, '1', '1', '1', '1'),
-(4, 2, 14, '1', '1', '1', '1'),
-(5, 3, 1, '-1', '-1', '-1', '-1'),
-(6, 3, 33, '1', '1', '1', '1'),
-(7, 3, 34, '1', '1', '1', '1'),
-(8, 3, 17, '1', '1', '1', '1'),
-(9, 3, 18, '1', '1', '1', '1'),
-(10, 3, 29, '1', '1', '1', '1'),
-(11, 2, 2, '1', '1', '1', '1'),
-(12, 3, 5, '1', '1', '1', '1'),
-(13, 3, 6, '1', '1', '1', '1');
+(1, 1, 2, '1', '1', '1', '1'),
+(2, 3, 2, '-1', '-1', '-1', '-1'),
+(3, 3, 3, '1', '1', '1', '1'),
+(4, 3, 31, '1', '1', '1', '1'),
+(5, 3, 15, '1', '1', '1', '1'),
+(6, 2, 2, '-1', '-1', '-1', '-1'),
+(7, 2, 6, '1', '1', '1', '1'),
+(8, 2, 7, '1', '1', '1', '1'),
+(9, 2, 18, '1', '1', '1', '1'),
+(10, 2, 19, '1', '1', '1', '1'),
+(11, 2, 34, '1', '1', '1', '1'),
+(12, 2, 35, '1', '1', '1', '1'),
+(13, 2, 30, '1', '1', '1', '1'),
+(14, 2, 3, '1', '1', '1', '1'),
+(15, 2, 31, '1', '1', '1', '1'),
+(16, 2, 15, '1', '1', '1', '1'),
+(17, 3, 6, '1', '1', '1', '1'),
+(18, 3, 7, '1', '1', '1', '1'),
+(19, 3, 18, '1', '1', '1', '1'),
+(20, 3, 19, '1', '1', '1', '1'),
+(21, 3, 34, '1', '1', '1', '1'),
+(22, 3, 35, '1', '1', '1', '1'),
+(23, 3, 30, '1', '1', '1', '1');
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `entradas`
---
--- Creación: 31-05-2014 a las 09:06:36
 --
 
 CREATE TABLE IF NOT EXISTS `entradas` (
@@ -183,8 +188,6 @@ CREATE TABLE IF NOT EXISTS `entradas` (
 --
 -- Estructura de tabla para la tabla `groups`
 --
--- Creación: 31-05-2014 a las 09:06:35
---
 
 CREATE TABLE IF NOT EXISTS `groups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -192,23 +195,23 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `created`, `modified`) VALUES
-(1, 'administrators', '2014-05-31 11:17:52', '2014-05-31 11:17:52'),
-(2, 'managers', '2014-05-31 11:18:01', '2014-05-31 11:18:01'),
-(3, 'users', '2014-05-31 11:18:07', '2014-05-31 11:18:07');
+(1, 'administrators', '2014-06-04 01:12:46', '2014-06-04 01:12:46'),
+(2, 'managers', '2014-06-04 01:12:57', '2014-06-04 01:12:57'),
+(3, 'users', '2014-06-04 01:13:13', '2014-06-04 01:13:13'),
+(4, 'pendientes', '2014-06-04 01:13:20', '2014-06-04 01:13:20'),
+(5, 'banned', '2014-06-04 01:13:29', '2014-06-04 01:13:29');
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `mods`
---
--- Creación: 31-05-2014 a las 09:07:13
 --
 
 CREATE TABLE IF NOT EXISTS `mods` (
@@ -232,8 +235,6 @@ CREATE TABLE IF NOT EXISTS `mods` (
 --
 -- Estructura de tabla para la tabla `users`
 --
--- Creación: 31-05-2014 a las 09:20:48
---
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -245,23 +246,21 @@ CREATE TABLE IF NOT EXISTS `users` (
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `nombre_completo`, `group_id`, `created`, `modified`) VALUES
-(1, 'admin', '9bab92c88ab415e37ec477ba85ad103c8856ca2f', 'admin', 1, '2014-05-31 11:18:49', '2014-05-31 11:18:49'),
-(2, 'manager', '554bf23e40410c035a5ff74feb037a28673e24f8', 'manager', 2, '2014-05-31 11:21:46', '2014-05-31 11:21:46'),
-(3, 'user', 'a68e11c1643ea3e9b6a11676e59b067e9208b3bb', 'user', 3, '2014-05-31 11:21:58', '2014-05-31 11:21:58');
+(1, 'admin', '9bab92c88ab415e37ec477ba85ad103c8856ca2f', 'admin', 1, '2014-06-04 01:13:54', '2014-06-04 01:13:54'),
+(2, 'manager', '554bf23e40410c035a5ff74feb037a28673e24f8', 'manager', 2, '2014-06-04 01:14:42', '2014-06-04 01:14:42'),
+(3, 'user', 'a68e11c1643ea3e9b6a11676e59b067e9208b3bb', 'user', 3, '2014-06-04 01:14:12', '2014-06-04 01:14:12');
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `widgets`
---
--- Creación: 31-05-2014 a las 09:07:13
 --
 
 CREATE TABLE IF NOT EXISTS `widgets` (
