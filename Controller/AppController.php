@@ -52,7 +52,6 @@ class AppController extends Controller {
 //            'controller' => 'mods',
 //            'action' => 'add'
 //        );
-        $this->Auth->allow('display');
     }
 
 }
