@@ -48,7 +48,9 @@ class UsersController extends AppController {
      * @return void
      */
     public function add() {
+
         if ($this->request->is('post')) {
+
             $this->User->create();
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been saved.'));
@@ -128,6 +130,9 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
+
+        $this->Auth->allow('add');
+
         $this->Auth->allow('initDB'); // We can remove this line after we’re finished
     }
 
@@ -140,20 +145,22 @@ class UsersController extends AppController {
         $group->id = 2;
         $this->Acl->deny($group, 'controllers');
         $this->Acl->allow($group, 'controllers/Entradas');
-        $this->Acl->allow($group, 'controllers/Widgets');
+        //$this->Acl->allow($group, 'controllers/Widgets');
         $this->Acl->allow($group, 'controllers/Mods');
         $this->Acl->allow($group, 'controllers/users/logout');
 // allow users to only add and edit on posts and widgets
         $group->id = 3;
         $this->Acl->deny($group, 'controllers');
         $this->Acl->allow($group, 'controllers/Entradas/add');
-        $this->Acl->allow($group, 'controllers/Entradas/edit');
+        //$this->Acl->allow($group, 'controllers/Entradas/edit');
         $this->Acl->allow($group, 'controllers/Mods/add');
-        $this->Acl->allow($group, 'controllers/Mods/edit');
-        $this->Acl->allow($group, 'controllers/Widgets/add');
-        $this->Acl->allow($group, 'controllers/Widgets/edit');
+        // $this->Acl->allow($group, 'controllers/Mods/edit');
+        //$this->Acl->allow($group, 'controllers/Widgets/add');
+        //$this->Acl->allow($group, 'controllers/Widgets/edit');
 // allow basic users to log out
+
         $this->Acl->allow($group, 'controllers/users/logout');
+
 // we add an exit to avoid an ugly "missing views" error message
         echo "all done";
         exit;
