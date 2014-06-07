@@ -16,11 +16,7 @@ class Entrada extends AppModel {
      *
      * @var array
      */
-    public $_schema = array(
-        'user_id' => array(
-            'default' => 4
-        ),
-    );
+
     public $validate = array(
         'user_id' => array(
             'numeric' => array(

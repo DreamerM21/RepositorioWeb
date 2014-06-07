@@ -49,8 +49,11 @@ class EntradasController extends AppController {
      */
     public function add() {
         if ($this->request->is('post')) {
+
             $this->Entrada->create();
+            $this->data['Entrada']['user_id'] = $this->Auth->User('id');
             if ($this->Entrada->save($this->request->data)) {
+
                 $this->Session->setFlash(__('The entrada has been saved.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
@@ -109,6 +112,7 @@ class EntradasController extends AppController {
         }
         return $this->redirect(array('action' => 'index'));
     }
+
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('index', 'view');

@@ -11,12 +11,6 @@ App::uses('AppModel', 'Model');
  */
 class User extends AppModel {
 
-//    public $_schema = array(
-//        'user_id' => array(
-//            'default' => 
-//        ),
-//    );
-
     /**
      * Validation rules
      *

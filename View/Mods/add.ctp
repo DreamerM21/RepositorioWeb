@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Mod'); ?></legend>
 	<?php
-		echo $this->Form->input('entrada_id');
+//		echo $this->Form->input('entrada_id');
 		echo $this->Form->input('user_id');
 		echo $this->Form->input('title');
 		echo $this->Form->input('url');
@@ -11,7 +11,7 @@
 		echo $this->Form->input('idiomas');
 		echo $this->Form->input('modelo_uso');
 		echo $this->Form->input('body');
-		echo $this->Form->input('val_user_id');
+//		echo $this->Form->input('val_user_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
