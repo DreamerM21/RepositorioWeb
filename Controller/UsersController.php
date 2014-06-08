@@ -51,13 +51,19 @@ class UsersController extends AppController {
 
 
         if ($this->request->is('post')) {
+            $data = null;
 
-            $this->User->create();
-            $this->data['User']['group_id'] = 4;
-            if ($this->User->save($this->request->data)) {
+            $data = array('User' => array(
+                    'username' => $this->request->data['User']['username'],
+                    'password' => $this->request->data['User']['password'],
+                    'password' => $this->request->data['User']['nombre_completo'],
+                    'group_id' => $this->data['User']['group_id'] = 4,
+                    ),
+            );
 
-                $this->Session->setFlash(__('The user has been saved.'));
-                return $this->redirect(array('action' => 'index'));
+            if ($this->User->save($data)) {
+                $this->Session->setFlash(__('The user has been saved'));
+                $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
             }
@@ -65,6 +71,25 @@ class UsersController extends AppController {
         $groups = $this->User->Group->find('list');
         $this->set(compact('groups'));
     }
+
+//    public function add() {
+//
+//
+//        if ($this->request->is('post')) {
+//
+//            $this->User->create();
+//            $this->data['User']['group_id'] = 4;
+//            if ($this->User->save($this->request->data)) {
+//
+//                $this->Session->setFlash(__('The user has been saved.'));
+//                return $this->redirect(array('action' => 'index'));
+//            } else {
+//                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+//            }
+//        }
+//        $groups = $this->User->Group->find('list');
+//        $this->set(compact('groups'));
+//    }
 
     /**
      * edit method
