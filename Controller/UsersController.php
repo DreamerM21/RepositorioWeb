@@ -56,7 +56,7 @@ class UsersController extends AppController {
             $data = array('User' => array(
                     'username' => $this->request->data['User']['username'],
                     'password' => $this->request->data['User']['password'],
-                    'password' => $this->request->data['User']['nombre_completo'],
+                    'nombre_completo' => $this->request->data['User']['nombre_completo'],
                     'group_id' => $this->data['User']['group_id'] = 4,
                     ),
             );
