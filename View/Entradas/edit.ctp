@@ -4,14 +4,13 @@
         <legend><?php echo __('Edit Entrada'); ?></legend>
         <?php
         echo $this->Form->hidden('id');
-//		echo $this->Form->input('user_id');
-        echo $this->Form->show('title');
-        echo $this->Form->show('url');
-        echo $this->Form->show('categoria');
-        echo $this->Form->show('idiomas');
-        echo $this->Form->show('modelo_uso');
-        echo $this->Form->show('body');
-	echo $this->Form->hidden('val_user_id');
+
+        echo $this->Form->input('title');
+        echo $this->Form->input('url');
+        echo $this->Form->input('categoria');
+        echo $this->Form->input('idiomas');
+        echo $this->Form->input('modelo_uso');
+        echo $this->Form->input('body');
         ?>
     </fieldset>
     <?php echo $this->Form->end(__('Submit')); ?>

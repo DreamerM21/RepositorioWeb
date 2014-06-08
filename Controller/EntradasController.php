@@ -75,24 +75,6 @@ class EntradasController extends AppController {
         $this->set(compact('users', 'valUsers'));
     }
 
-//    public function add() {
-//        if ($this->request->is('post')) {
-//
-//            $this->Entrada->create();
-//            $this->data['Entrada']['user_id'] = $this->Auth->User('id');
-//            if ($this->Entrada->save($this->request->data)) {
-//
-//                $this->Session->setFlash(__('The entrada has been saved.'));
-//                return $this->redirect(array('action' => 'index'));
-//            } else {
-//                $this->Session->setFlash(__('The entrada could not be saved. Please, try again.'));
-//            }
-//        }
-//        $users = $this->Entrada->User->find('list');
-//        $valUsers = $this->Entrada->ValUser->find('list');
-//        $this->set(compact('users', 'valUsers'));
-//    }
-
     /**
      * edit method
      *
@@ -106,23 +88,20 @@ class EntradasController extends AppController {
         }
         if ($this->request->is(array('post', 'put'))) {
             $data = null;
-
             $data = array('Entrada' => array(
-
-                    'val_user_id' => $this->data['Entrada']['val_user_id'] = $this->Auth->User('id')
+                    'id' => $this->request->data['Entrada']['id'],
+                    'val_user_id' => $this->data['Entrada']['val_user_id '] = $this->Auth->User('id')
                 ),
             );
-
-            if ($this->Entrada->save($this->data)) {
+            if ($this->Entrada->save($data)) {
                 $this->Session->setFlash(__('The entrada has been saved.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__('The entrada could not be saved. Please, try again.'));
             }
         } else {
-    
             $options = array('conditions' => array('Entrada.' . $this->Entrada->primaryKey => $id));
-            $this->data = $this->Entrada->find('first', $options);
+            $this->request->data = $this->Entrada->find('first', $options);
         }
         $users = $this->Entrada->User->find('list');
         $valUsers = $this->Entrada->ValUser->find('list');
