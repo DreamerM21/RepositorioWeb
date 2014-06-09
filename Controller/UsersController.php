@@ -36,7 +36,7 @@ class UsersController extends AppController {
      */
     public function view($id = null) {
         if (!$this->User->exists($id)) {
-            throw new NotFoundException(__('Invalid user'));
+            throw new NotFoundException(__('Usuario no valido'));
         }
         $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
         $this->set('user', $this->User->find('first', $options));
@@ -62,34 +62,16 @@ class UsersController extends AppController {
             );
 
             if ($this->User->save($data)) {
-                $this->Session->setFlash(__('The user has been saved'));
+                $this->Session->setFlash(__('El usuario de ha guardado'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('No se ha podido guardar el usuario. Intentalo de nuevo.'));
             }
         }
         $groups = $this->User->Group->find('list');
         $this->set(compact('groups'));
     }
 
-//    public function add() {
-//
-//
-//        if ($this->request->is('post')) {
-//
-//            $this->User->create();
-//            $this->data['User']['group_id'] = 4;
-//            if ($this->User->save($this->request->data)) {
-//
-//                $this->Session->setFlash(__('The user has been saved.'));
-//                return $this->redirect(array('action' => 'index'));
-//            } else {
-//                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
-//            }
-//        }
-//        $groups = $this->User->Group->find('list');
-//        $this->set(compact('groups'));
-//    }
 
     /**
      * edit method
@@ -100,14 +82,14 @@ class UsersController extends AppController {
      */
     public function edit($id = null) {
         if (!$this->User->exists($id)) {
-            throw new NotFoundException(__('Invalid user'));
+            throw new NotFoundException(__('Usuario no valido'));
         }
         if ($this->request->is(array('post', 'put'))) {
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved.'));
+                $this->Session->setFlash(__('El usuario ha sido guardado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('No se ha podido guardar el usuario. Intentalo de nuevo.'));
             }
         } else {
             $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
@@ -127,13 +109,13 @@ class UsersController extends AppController {
     public function delete($id = null) {
         $this->User->id = $id;
         if (!$this->User->exists()) {
-            throw new NotFoundException(__('Invalid user'));
+            throw new NotFoundException(__('Usuario no valido.'));
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->User->delete()) {
-            $this->Session->setFlash(__('The user has been deleted.'));
+            $this->Session->setFlash(__('El usuario ha sido eliminado.'));
         } else {
-            $this->Session->setFlash(__('The user could not be deleted. Please, try again.'));
+            $this->Session->setFlash(__('El usuario no pudo eliminarse. Intentalo de nuevo.'));
         }
         return $this->redirect(array('action' => 'index'));
     }
@@ -141,18 +123,18 @@ class UsersController extends AppController {
     public function login() {
         if ($this->request->is('post')) {
             if ($this->Session->read('Auth.User')) {
-                $this->Session->setFlash('You are logged in!');
+                $this->Session->setFlash('estas dentro.');
                 return $this->redirect('/');
             }
             if ($this->Auth->login()) {
                 return $this->redirect($this->Auth->redirect());
             }
-            $this->Session->setFlash(__('Your username or password was incorrect.'));
+            $this->Session->setFlash(__('El usuario o password no es correcto'));
         }
     }
 
     public function logout() {
-        $this->Session->setFlash('Good-Bye');
+        $this->Session->setFlash('Adios');
         $this->redirect($this->Auth->logout());
     }
 

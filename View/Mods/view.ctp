@@ -66,13 +66,13 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Mod'), array('action' => 'edit', $mod['Mod']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Mod'), array('action' => 'delete', $mod['Mod']['id']), null, __('Are you sure you want to delete # %s?', $mod['Mod']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Mods'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Mod'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Entradas'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Entrada'), array('controller' => 'entradas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Modificacion'), array('action' => 'edit', $mod['Mod']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Modificacion'), array('action' => 'delete', $mod['Mod']['id']), null, __('Are you sure you want to delete # %s?', $mod['Mod']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Modificiaciones'), array('action' => 'index')); ?> </li>
+		<!--<li><?php echo $this->Html->link(__('Nueva Modificacion'), array('action' => 'add')); ?> </li>-->
+		<li><?php echo $this->Html->link(__('Ver Entradas'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Entrada'), array('controller' => 'entradas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

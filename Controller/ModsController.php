@@ -36,7 +36,7 @@ class ModsController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Mod->exists($id)) {
-            throw new NotFoundException(__('Invalid mod'));
+            throw new NotFoundException(__('Modificacion no valida'));
         }
         $options = array('conditions' => array('Mod.' . $this->Mod->primaryKey => $id));
         $this->set('mod', $this->Mod->find('first', $options));
@@ -64,10 +64,10 @@ class ModsController extends AppController {
 
             if ($this->Mod->save($data)) {
 
-                $this->Session->setFlash(__('The Mod has been saved.'));
+                $this->Session->setFlash(__('La modificacion se ha guardado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The Mod could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('No se ha podido guardar la modificacion. Intentalo de nuevo.'));
             }
         }
         $entradas = $this->Mod->Entrada->find('list');
@@ -85,7 +85,7 @@ class ModsController extends AppController {
      */
     public function edit($id = null) {
         if (!$this->Mod->exists($id)) {
-            throw new NotFoundException(__('Invalid entrada'));
+            throw new NotFoundException(__('Modificacion no valida'));
         }
         if ($this->request->is(array('post', 'put'))) {
             $data = null;
@@ -101,10 +101,10 @@ class ModsController extends AppController {
                 ),
             );
             if ($this->Mod->save($data)) {
-                $this->Session->setFlash(__('The mod has been saved.'));
+                $this->Session->setFlash(__('La modificacion se ha guardado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The mod could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('No se ha podido guardar la modificacion. Intentalo de nuevo.'));
             }
         } else {
             $options = array('conditions' => array('Mod.' . $this->Mod->primaryKey => $id));
@@ -126,13 +126,13 @@ class ModsController extends AppController {
     public function delete($id = null) {
         $this->Mod->id = $id;
         if (!$this->Mod->exists()) {
-            throw new NotFoundException(__('Invalid mod'));
+            throw new NotFoundException(__('Modificacion no valida'));
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Mod->delete()) {
-            $this->Session->setFlash(__('The mod has been deleted.'));
+            $this->Session->setFlash(__('La modificacion ha sido eliminada'));
         } else {
-            $this->Session->setFlash(__('The mod could not be deleted. Please, try again.'));
+            $this->Session->setFlash(__('La modificacion no se pudo eliminar. Intentalo de nuevo'));
         }
         return $this->redirect(array('action' => 'index'));
     }

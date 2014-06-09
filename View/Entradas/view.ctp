@@ -61,18 +61,19 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Entrada'), array('action' => 'edit', $entrada['Entrada']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Entrada'), array('action' => 'delete', $entrada['Entrada']['id']), null, __('Are you sure you want to delete # %s?', $entrada['Entrada']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Entradas'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Entrada'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Mods'), array('controller' => 'mods', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Mod'), array('controller' => 'mods', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Entrada'), array('action' => 'edit', $entrada['Entrada']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Entrada'), array('action' => 'delete', $entrada['Entrada']['id']), null, __('Are you sure you want to delete # %s?', $entrada['Entrada']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Entradas'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Entrada'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Modificaciones'), array('controller' => 'mods', 'action' => 'index')); ?> </li>
+              
+		<!--<li><?php echo $this->Html->link(__('Nueva Modificacion'), array('controller' => 'mods', 'action' => 'add')); ?> </li>-->
 	</ul>
 </div>
 <div class="related">
-	<h3><?php echo __('Related Mods'); ?></h3>
+	<h3><?php echo __('Realizar Modificacion'); ?></h3>
 	<?php if (!empty($entrada['Mod'])): ?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
@@ -116,7 +117,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Mod'), array('controller' => 'mods', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('Modificar esta Entrada'), array('controller' => 'mods', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>

@@ -26,16 +26,16 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Group'), array('action' => 'edit', $group['Group']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Group'), array('action' => 'delete', $group['Group']['id']), null, __('Are you sure you want to delete # %s?', $group['Group']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Groups'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Group'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Grupo'), array('action' => 'edit', $group['Group']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Grupo'), array('action' => 'delete', $group['Group']['id']), null, __('Are you sure you want to delete # %s?', $group['Group']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Mostrar Grupos'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Grupo'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Mostrar Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
-	<h3><?php echo __('Related Users'); ?></h3>
+	<h3><?php echo __('Usuarios en el grupo'); ?></h3>
 	<?php if (!empty($group['User'])): ?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
@@ -69,7 +69,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>

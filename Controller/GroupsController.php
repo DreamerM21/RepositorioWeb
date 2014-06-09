@@ -36,7 +36,7 @@ class GroupsController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Group->exists($id)) {
-            throw new NotFoundException(__('Invalid group'));
+            throw new NotFoundException(__('Grupo no valido'));
         }
         $options = array('conditions' => array('Group.' . $this->Group->primaryKey => $id));
         $this->set('group', $this->Group->find('first', $options));
@@ -51,10 +51,10 @@ class GroupsController extends AppController {
         if ($this->request->is('post')) {
             $this->Group->create();
             if ($this->Group->save($this->request->data)) {
-                $this->Session->setFlash(__('The group has been saved.'));
+                $this->Session->setFlash(__('El grupo se ha guardado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('El grupo no ha podido ser guardado. Intentalo de nuevo.'));
             }
         }
     }
@@ -68,14 +68,14 @@ class GroupsController extends AppController {
      */
     public function edit($id = null) {
         if (!$this->Group->exists($id)) {
-            throw new NotFoundException(__('Invalid group'));
+            throw new NotFoundException(__('Grupo no valido'));
         }
         if ($this->request->is(array('post', 'put'))) {
             if ($this->Group->save($this->request->data)) {
-                $this->Session->setFlash(__('The group has been saved.'));
+                $this->Session->setFlash(__('El grupo se ha guardado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('El grupo no ha podido ser guardado. Intentalo de nuevo.'));
             }
         } else {
             $options = array('conditions' => array('Group.' . $this->Group->primaryKey => $id));
@@ -93,13 +93,13 @@ class GroupsController extends AppController {
     public function delete($id = null) {
         $this->Group->id = $id;
         if (!$this->Group->exists()) {
-            throw new NotFoundException(__('Invalid group'));
+            throw new NotFoundException(__('Grupo no valido'));
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Group->delete()) {
-            $this->Session->setFlash(__('The group has been deleted.'));
+            $this->Session->setFlash(__('El grupo ha sido eliminado.'));
         } else {
-            $this->Session->setFlash(__('The group could not be deleted. Please, try again.'));
+            $this->Session->setFlash(__('El grupo no ha podido ser eliminado. Intentalo de nuevo.'));
         }
         return $this->redirect(array('action' => 'index'));
     }

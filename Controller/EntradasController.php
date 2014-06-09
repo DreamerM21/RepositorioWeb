@@ -36,7 +36,7 @@ class EntradasController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Entrada->exists($id)) {
-            throw new NotFoundException(__('Invalid entrada'));
+            throw new NotFoundException(__('Entrada no valida'));
         }
         $options = array('conditions' => array('Entrada.' . $this->Entrada->primaryKey => $id));
         $this->set('entrada', $this->Entrada->find('first', $options));
@@ -64,10 +64,10 @@ class EntradasController extends AppController {
 
             if ($this->Entrada->save($data)) {
 
-                $this->Session->setFlash(__('The entrada has been saved.'));
+                $this->Session->setFlash(__('La entrada se ha guardado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The entrada could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('No se ha podido guardar la entrada. Intentalo de nuevo.'));
             }
         }
         $users = $this->Entrada->User->find('list');
@@ -84,7 +84,7 @@ class EntradasController extends AppController {
      */
     public function edit($id = null) {
         if (!$this->Entrada->exists($id)) {
-            throw new NotFoundException(__('Invalid entrada'));
+            throw new NotFoundException(__('Entrada no valida'));
         }
         if ($this->request->is(array('post', 'put'))) {
             $data = null;
@@ -94,10 +94,10 @@ class EntradasController extends AppController {
                 ),
             );
             if ($this->Entrada->save($data)) {
-                $this->Session->setFlash(__('The entrada has been saved.'));
+                $this->Session->setFlash(__('La entrada se ha guardado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The entrada could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('No se ha podido guardar la entrada. Intentalo de nuevo.'));
             }
         } else {
             $options = array('conditions' => array('Entrada.' . $this->Entrada->primaryKey => $id));
@@ -118,13 +118,13 @@ class EntradasController extends AppController {
     public function delete($id = null) {
         $this->Entrada->id = $id;
         if (!$this->Entrada->exists()) {
-            throw new NotFoundException(__('Invalid entrada'));
+            throw new NotFoundException(__('Entrada invalida'));
         }
         $this->request->onlyAllow('post', 'delete');
         if ($this->Entrada->delete()) {
-            $this->Session->setFlash(__('The entrada has been deleted.'));
+            $this->Session->setFlash(__('La entrada se ha eliminado'));
         } else {
-            $this->Session->setFlash(__('The entrada could not be deleted. Please, try again.'));
+            $this->Session->setFlash(__('La entrada no se pudo eliminar. Intentalo de nuevo.'));
         }
         return $this->redirect(array('action' => 'index'));
     }
