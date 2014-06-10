@@ -48,10 +48,12 @@ class ModsController extends AppController {
      * @return void
      */
     public function add() {
-            if ($this->request->is('post')) {
+        $this->set('authUser', $this->Auth->user());
+        if ($this->request->is('post')) {
             $data = null;
 
             $data = array('Mod' => array(
+                    'entrada_id' => $this->request->data['Mod']['entrada_id'],
                     'title' => $this->request->data['Mod']['title'],
                     'url' => $this->request->data['Mod']['url'],
                     'categoria' => $this->request->data['Mod']['categoria'],
@@ -88,19 +90,29 @@ class ModsController extends AppController {
             throw new NotFoundException(__('Modificacion no valida'));
         }
         if ($this->request->is(array('post', 'put'))) {
+
             $data = null;
             $data = array('Mod' => array(
                     'id' => $this->request->data['Mod']['id'],
+                    'entrada_id' => $this->request->data['Mod']['entrada_id'],
                     'title' => $this->request->data['Mod']['title'],
                     'url' => $this->request->data['Mod']['url'],
                     'categoria' => $this->request->data['Mod']['categoria'],
                     'idiomas' => $this->request->data['Mod']['idiomas'],
                     'modelo_uso' => $this->request->data['Mod']['modelo_uso'],
                     'body' => $this->request->data['Mod']['body'],
-                    'val_user_id' => $this->data['Mod']['val_user_id '] = $this->Auth->User('id')
+                    'val_user_id' => $this->data['Mod']['val_user_id '] = $this->Auth->User('id'),
+//                    'title' => $this->request->data['Entrada']['title'],
+//                    'url' => $this->request->data['Entrada']['url'],
+//                    'categoria' => $this->request->data['Entrada']['categoria'],
+//                    'idiomas' => $this->request->data['Entrada']['idiomas'],
+//                    'modelo_uso' => $this->request->data['Entrada']['modelo_uso'],
+//                    'body' => $this->request->data['Entrada']['body']
                 ),
             );
+
             if ($this->Mod->save($data)) {
+
                 $this->Session->setFlash(__('La modificacion se ha guardado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {

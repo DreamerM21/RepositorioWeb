@@ -37,6 +37,8 @@ class AppController extends Controller {
     ;
 
     public function beforeFilter() {
+        $this->set('authUser', $this->Auth->user());
+
 //Configure AuthComponent
         $this->Auth->loginAction = array(
             'controller' => 'users',
