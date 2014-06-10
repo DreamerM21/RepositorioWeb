@@ -14,7 +14,7 @@
 			<th><?php echo $this->Paginator->sort('val_user_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<!--<th class="actions"><?php echo __('Actions'); ?></th>-->
 	</tr>
 	<?php foreach ($mods as $mod): ?>
 	<tr>
@@ -34,11 +34,11 @@
 		<td><?php echo h($mod['Mod']['val_user_id']); ?>&nbsp;</td>
 		<td><?php echo h($mod['Mod']['created']); ?>&nbsp;</td>
 		<td><?php echo h($mod['Mod']['modified']); ?>&nbsp;</td>
-		<td class="actions">
+<!--		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $mod['Mod']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $mod['Mod']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $mod['Mod']['id']), null, __('Are you sure you want to delete # %s?', $mod['Mod']['id'])); ?>
-		</td>
+		</td>-->
 	</tr>
 <?php endforeach; ?>
 	</table>
@@ -59,9 +59,9 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Ver Entradas'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Nueva Entrada'), array('controller' => 'entradas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('Ver Usuario Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Nuevo Usuario User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Home'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
+		<!--<li><?php echo $this->Html->link(__('Nueva Entrada'), array('controller' => 'entradas', 'action' => 'add')); ?> </li>-->
+<!--		<li><?php echo $this->Html->link(__('Ver Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>-->
 	</ul>
 </div>

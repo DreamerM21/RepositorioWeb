@@ -1,7 +1,7 @@
 <div class="mods form">
     <?php echo $this->Form->create('Mod'); ?>
     <fieldset>
-        <legend><?php echo __('Add Mod'); ?></legend>
+        <legend><?php echo __('Proponer Modificacion'); ?></legend>
         <?php
         echo $this->Form->input('entrada_id');
         echo $this->Form->input('title');

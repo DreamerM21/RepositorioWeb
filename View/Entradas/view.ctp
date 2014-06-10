@@ -63,11 +63,12 @@
     <ul>
             <!--<li><?php echo $this->Html->link(__('Modificar Entrada'), array('action' => 'edit', $entrada['Entrada']['id'])); ?> </li>-->
 
-        <li><?php echo $this->Html->link(__('Ver Entradas'), array('action' => 'index')); ?> </li>
-               <?php $uid = AuthComponent::user('group_id') ;;?>
-        <?php if ($uid == 1 ):?>
-        <li><?php echo $this->Form->postLink(__('Eliminar Entrada'), array('action' => 'delete', $entrada['Entrada']['id']), null, __('Are you sure you want to delete # %s?', $entrada['Entrada']['id'])); ?> </li>
-        <?php endif;?>
+        <li><?php echo $this->Html->link(__('Home'), array('action' => 'index')); ?> </li>
+        <?php $uid = AuthComponent::user('group_id');
+        ; ?>
+        <?php if ($uid == 1): ?>
+            <li><?php echo $this->Form->postLink(__('Eliminar Entrada'), array('action' => 'delete', $entrada['Entrada']['id']), null, __('Are you sure you want to delete # %s?', $entrada['Entrada']['id'])); ?> </li>
+<?php endif; ?>
                         <!--<li><?php echo $this->Html->link(__('Ver Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>-->
                         <!--<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>-->
                         <!--<li><?php echo $this->Html->link(__('Ver Modificaciones'), array('controller' => 'mods', 'action' => 'index')); ?> </li>-->
@@ -77,50 +78,53 @@
 </div>
 <div class="related">
     <h3><?php echo __('Realizar Modificacion'); ?></h3>
-    <?php if (!empty($entrada['Mod'])): ?>
-        <table cellpadding = "0" cellspacing = "0">
-            <tr>
-                <th><?php echo __('Id'); ?></th>
-                <th><?php echo __('Entrada Id'); ?></th>
-                <th><?php echo __('User Id'); ?></th>
-                <th><?php echo __('Title'); ?></th>
-                <th><?php echo __('Url'); ?></th>
-                <th><?php echo __('Categoria'); ?></th>
-                <th><?php echo __('Idiomas'); ?></th>
-                <th><?php echo __('Modelo Uso'); ?></th>
-                <th><?php echo __('Body'); ?></th>
-                <th><?php echo __('Val User Id'); ?></th>
-                <th><?php echo __('Created'); ?></th>
-                <th><?php echo __('Modified'); ?></th>
-                <th class="actions"><?php echo __('Actions'); ?></th>
-            </tr>
-            <?php foreach ($entrada['Mod'] as $mod): ?>
-                <tr>
-                    <td><?php echo $mod['id']; ?></td>
-                    <td><?php echo $mod['entrada_id']; ?></td>
-                    <td><?php echo $mod['user_id']; ?></td>
-                    <td><?php echo $mod['title']; ?></td>
-                    <td><?php echo $mod['url']; ?></td>
-                    <td><?php echo $mod['categoria']; ?></td>
-                    <td><?php echo $mod['idiomas']; ?></td>
-                    <td><?php echo $mod['modelo_uso']; ?></td>
-                    <td><?php echo $mod['body']; ?></td>
-                    <td><?php echo $mod['val_user_id']; ?></td>
-                    <td><?php echo $mod['created']; ?></td>
-                    <td><?php echo $mod['modified']; ?></td>
-                    <td class="actions">
-                        <?php echo $this->Html->link(__('Ver'), array('controller' => 'mods', 'action' => 'view', $mod['id'])); ?>
-                        <?php echo $this->Html->link(__('Validar'), array('controller' => 'mods', 'action' => 'edit', $mod['id'])); ?>
-                        <?php // echo $this->Form->postLink(__('Eliminar'), array('controller' => 'mods', 'action' => 'delete', $mod['id']), null, __('Are you sure you want to delete # %s?', $mod['id'])); ?>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </table>
-    <?php endif; ?>
-
-    <div class="actions">
+        <div class="actions">
         <ul>
             <li><?php echo $this->Html->link(__('Modificar esta Entrada'), array('controller' => 'mods', 'action' => 'add')); ?> </li>
         </ul>
     </div>
+    <?php if ($uid == 1 || $uid == 2): ?> 
+    <?php if (!empty($entrada['Mod'])): ?>
+            <table cellpadding = "0" cellspacing = "0">
+                <tr>
+                    <th><?php echo __('Id'); ?></th>
+                    <th><?php echo __('Entrada Id'); ?></th>
+                    <th><?php echo __('User Id'); ?></th>
+                    <th><?php echo __('Title'); ?></th>
+                    <th><?php echo __('Url'); ?></th>
+                    <th><?php echo __('Categoria'); ?></th>
+                    <th><?php echo __('Idiomas'); ?></th>
+                    <th><?php echo __('Modelo Uso'); ?></th>
+                    <th><?php echo __('Body'); ?></th>
+                    <th><?php echo __('Val User Id'); ?></th>
+                    <th><?php echo __('Created'); ?></th>
+                    <th><?php echo __('Modified'); ?></th>
+                    <th class="actions"><?php echo __('Actions'); ?></th>
+                </tr>
+        <?php foreach ($entrada['Mod'] as $mod): ?>
+                    <tr>
+                        <td><?php echo $mod['id']; ?></td>
+                        <td><?php echo $mod['entrada_id']; ?></td>
+                        <td><?php echo $mod['user_id']; ?></td>
+                        <td><?php echo $mod['title']; ?></td>
+                        <td><?php echo $mod['url']; ?></td>
+                        <td><?php echo $mod['categoria']; ?></td>
+                        <td><?php echo $mod['idiomas']; ?></td>
+                        <td><?php echo $mod['modelo_uso']; ?></td>
+                        <td><?php echo $mod['body']; ?></td>
+                        <td><?php echo $mod['val_user_id']; ?></td>
+                        <td><?php echo $mod['created']; ?></td>
+                        <td><?php echo $mod['modified']; ?></td>
+                        <td class="actions">
+                            <?php echo $this->Html->link(__('Ver'), array('controller' => 'mods', 'action' => 'view', $mod['id'])); ?>
+                            <?php echo $this->Html->link(__('Validar'), array('controller' => 'mods', 'action' => 'edit', $mod['id'])); ?>
+            <?php // echo $this->Form->postLink(__('Eliminar'), array('controller' => 'mods', 'action' => 'delete', $mod['id']), null, __('Are you sure you want to delete # %s?', $mod['id']));  ?>
+                        </td>
+                    </tr>
+            <?php endforeach; ?>
+            </table>
+        <?php endif; ?>
+<?php endif; ?>
+
+
 </div>

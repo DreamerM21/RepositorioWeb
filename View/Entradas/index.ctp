@@ -218,7 +218,7 @@
         <?php
         if ($uid == 1):
             echo"<li>";
-            echo $this->Html->link(__('Ver Usuarios'), array('controller' => 'users', 'action' => 'index'));
+            echo $this->Html->link(__('Admin. Usuarios'), array('controller' => 'users', 'action' => 'index'));
             echo"</li>";
         endif;
         ?>
