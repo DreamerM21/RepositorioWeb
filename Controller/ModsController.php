@@ -102,12 +102,12 @@ class ModsController extends AppController {
                     'modelo_uso' => $this->request->data['Mod']['modelo_uso'],
                     'body' => $this->request->data['Mod']['body'],
                     'val_user_id' => $this->data['Mod']['val_user_id '] = $this->Auth->User('id'),
-//                    'title' => $this->request->data['Entrada']['title'],
-//                    'url' => $this->request->data['Entrada']['url'],
-//                    'categoria' => $this->request->data['Entrada']['categoria'],
-//                    'idiomas' => $this->request->data['Entrada']['idiomas'],
-//                    'modelo_uso' => $this->request->data['Entrada']['modelo_uso'],
-//                    'body' => $this->request->data['Entrada']['body']
+                    'Entrada.title' => $this->request->data['Mod']['title'],
+                    'Entrada.url' => $this->request->data['Mod']['url'],
+                    'Entrada.categoria' => $this->request->data['Mod']['categoria'],
+                    'Entrada.idiomas' => $this->request->data['Mod']['idiomas'],
+                    'Entrada.modelo_uso' => $this->request->data['Mod']['modelo_uso'],
+                    'Entrada.body' => $this->request->data['Mod']['body']
                 ),
             );
 
@@ -118,6 +118,29 @@ class ModsController extends AppController {
             } else {
                 $this->Session->setFlash(__('No se ha podido guardar la modificacion. Intentalo de nuevo.'));
             }
+            $data = null;
+            $data = array('Mod' => array(
+                    'id' => $this->request->data['Mod']['id'],
+                    'entrada_id' => $this->request->data['Mod']['entrada_id'],
+                    'title' => $this->request->data['Mod']['title'],
+                    'url' => $this->request->data['Mod']['url'],
+                    'categoria' => $this->request->data['Mod']['categoria'],
+                    'idiomas' => $this->request->data['Mod']['idiomas'],
+                    'modelo_uso' => $this->request->data['Mod']['modelo_uso'],
+                    'body' => $this->request->data['Mod']['body'],
+                    'val_user_id' => $this->data['Mod']['val_user_id '] = $this->Auth->User('id'),
+
+                ),
+            );
+
+            if ($this->Mod->save($data)) {
+
+                $this->Session->setFlash(__('La modificacion se ha guardado.'));
+                return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('No se ha podido guardar la modificacion. Intentalo de nuevo.'));
+            }
+            
         } else {
             $options = array('conditions' => array('Mod.' . $this->Mod->primaryKey => $id));
             $this->request->data = $this->Mod->find('first', $options);

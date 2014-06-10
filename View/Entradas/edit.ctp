@@ -1,7 +1,7 @@
 c<div class="entradas form">
     <?php echo $this->Form->create('Entrada'); ?>
     <fieldset>
-        <legend><?php echo __('Modificar Entrada'); ?></legend>
+        <legend><?php echo __('Validar Entrada'); ?></legend>
         <?php
         echo $this->Form->hidden('id');
 
@@ -13,15 +13,15 @@ c<div class="entradas form">
         echo $this->Form->input('body');
         ?>
     </fieldset>
-    <?php echo $this->Form->end(__('Submit')); ?>
+    <?php echo $this->Form->end(__('Validar')); ?>
 </div>
 <div class="actions">
     <h3><?php echo __('Actions'); ?></h3>
     <ul><li><?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'Eliminar', $this->Form->value('Entrada.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Entrada.id'))); ?></li>
-        <li><?php echo $this->Html->link(__('Ver Entradas'), array('action' => 'index')); ?></li>
-        <li><?php echo $this->Html->link(__('Ver Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-        <li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-        <li><?php echo $this->Html->link(__('Ver Modificaciones'), array('controller' => 'mods', 'action' => 'index')); ?> </li>
+        <li><?php echo $this->Html->link(__('Home'), array('action' => 'index')); ?></li>
+        <!--<li><?php echo $this->Html->link(__('Ver Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>-->
+        <!--<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>-->
+        <!--<li><?php echo $this->Html->link(__('Ver Modificaciones'), array('controller' => 'mods', 'action' => 'index')); ?> </li>-->
         <!--<li><?php echo $this->Html->link(__('Nueva Modificacion'), array('controller' => 'mods', 'action' => 'add')); ?> </li>-->
         
     </ul>

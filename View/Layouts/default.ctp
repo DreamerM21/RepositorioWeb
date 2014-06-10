@@ -29,7 +29,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
     <body>
         <div id="container">
             <div id="header">
-                <h1><?php echo $this->Html->link('¡El nuevo repositorio web, comparte ahora las mejores pagina que conozcas!.', 'https://github.com/DreamerM21/RepositorioWeb'); ?></h1>
+                <h1><?php echo $this->Html->link('¡El nuevo repositorio web, comparte ahora las mejores paginas que conozcas!.', 'https://github.com/DreamerM21/RepositorioWeb'); ?></h1>
                 <li><?php
         if (!$authUser) {
             echo $this->Html->link(__('Login'), array('controller' => 'users', 'action' => 'login'));
