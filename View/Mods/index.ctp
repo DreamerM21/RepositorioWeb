@@ -34,11 +34,11 @@
 		<td><?php echo h($mod['Mod']['val_user_id']); ?>&nbsp;</td>
 		<td><?php echo h($mod['Mod']['created']); ?>&nbsp;</td>
 		<td><?php echo h($mod['Mod']['modified']); ?>&nbsp;</td>
-<!--		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $mod['Mod']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $mod['Mod']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $mod['Mod']['id']), null, __('Are you sure you want to delete # %s?', $mod['Mod']['id'])); ?>
-		</td>-->
+		<td class="actions">
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $mod['Mod']['id'])); ?>
+			<?php echo $this->Html->link(__('Validar'), array('action' => 'edit', $mod['Mod']['id'])); ?>
+			<!--<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $mod['Mod']['id']), null, __('Are you sure you want to delete # %s?', $mod['Mod']['id'])); ?>-->
+		</td>
 	</tr>
 <?php endforeach; ?>
 	</table>

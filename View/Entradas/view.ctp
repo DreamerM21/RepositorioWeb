@@ -118,7 +118,7 @@
                         <td class="actions">
                             <?php echo $this->Html->link(__('Ver'), array('controller' => 'mods', 'action' => 'view', $mod['id'])); ?>
                             <?php echo $this->Html->link(__('Validar'), array('controller' => 'mods', 'action' => 'edit', $mod['id'])); ?>
-            <?php // echo $this->Form->postLink(__('Eliminar'), array('controller' => 'mods', 'action' => 'delete', $mod['id']), null, __('Are you sure you want to delete # %s?', $mod['id']));  ?>
+           <?php //  echo $this->Form->postLink(__('Eliminar'), array('controller' => 'mods', 'action' => 'delete', $mod['id']), null, __('Are you sure you want to delete # %s?', $mod['id']));  ?>
                         </td>
                     </tr>
             <?php endforeach; ?>

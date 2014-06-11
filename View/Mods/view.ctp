@@ -67,7 +67,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Validar Modificacion'), array('action' => 'edit', $mod['Mod']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Eliminar Modificacion'), array('action' => 'delete', $mod['Mod']['id']), null, __('Are you sure you want to delete # %s?', $mod['Mod']['id'])); ?> </li>
+		<!--<li><?php echo $this->Form->postLink(__('Eliminar Modificacion'), array('action' => 'delete', $mod['Mod']['id']), null, __('Are you sure you want to delete # %s?', $mod['Mod']['id'])); ?> </li>-->
 		<!--<li><?php echo $this->Html->link(__('Ver Modificiaciones'), array('action' => 'index')); ?> </li>-->
 		<!--<li><?php echo $this->Html->link(__('Nueva Modificacion'), array('action' => 'add')); ?> </li>-->
 		<li><?php echo $this->Html->link(__('Home'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>

@@ -123,7 +123,7 @@ class Entrada extends AppModel {
         'Mod' => array(
             'className' => 'Mod',
             'foreignKey' => 'entrada_id',
-            'dependent' => false,
+            'dependent' => true,
             'conditions' => '',
             'fields' => '',
             'order' => '',

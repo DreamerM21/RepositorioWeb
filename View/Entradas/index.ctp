@@ -75,7 +75,7 @@
                 echo $this->Html->link(__('Ver'), array('action' => 'view', $entrada['Entrada']['id']));
 //                echo $this->Html->link(__('Edit'), array('action' => 'edit', $entrada['Entrada']['id']));
 //                echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $entrada['Entrada']['id']), null, __('Are you sure you want to delete # %s?', $entrada['Entrada']['id']));
-                ;
+                
                 echo "</td>";
                 echo "</tr>";
             }
@@ -186,7 +186,7 @@
                     echo '<td class="actions">';
                     echo $this->Html->link(__('Ver'), array('action' => 'view', $entrada['Entrada']['id']));
                     echo $this->Html->link(__('Validar'), array('action' => 'edit', $entrada['Entrada']['id']));
-                    echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $entrada['Entrada']['id']), null, __('Are you sure you want to delete # %s?', $entrada['Entrada']['id']));
+//                    echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $entrada['Entrada']['id']), null, __('Are you sure you want to delete # %s?', $entrada['Entrada']['id']));
 
                     echo "</td>";
                     echo "</tr>";

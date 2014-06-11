@@ -48,7 +48,7 @@ class ModsController extends AppController {
      * @return void
      */
     public function add() {
-        $this->set('authUser', $this->Auth->user());
+
         if ($this->request->is('post')) {
             $data = null;
 
@@ -94,13 +94,13 @@ class ModsController extends AppController {
             $data = null;
             $data = array('Mod' => array(
                     'id' => $this->request->data['Mod']['id'],
-                    'entrada_id' => $this->request->data['Mod']['entrada_id'],
-                    'title' => $this->request->data['Mod']['title'],
-                    'url' => $this->request->data['Mod']['url'],
-                    'categoria' => $this->request->data['Mod']['categoria'],
-                    'idiomas' => $this->request->data['Mod']['idiomas'],
-                    'modelo_uso' => $this->request->data['Mod']['modelo_uso'],
-                    'body' => $this->request->data['Mod']['body'],
+//                    'entrada_id' => $this->request->data['Mod']['entrada_id'],
+//                    'title' => $this->request->data['Mod']['title'],
+//                    'url' => $this->request->data['Mod']['url'],
+//                    'categoria' => $this->request->data['Mod']['categoria'],
+//                    'idiomas' => $this->request->data['Mod']['idiomas'],
+//                    'modelo_uso' => $this->request->data['Mod']['modelo_uso'],
+//                    'body' => $this->request->data['Mod']['body'],
                     'val_user_id' => $this->data['Mod']['val_user_id '] = $this->Auth->User('id'),
                   ),
             );
