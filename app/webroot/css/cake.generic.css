@@ -52,7 +52,7 @@ h1 {
 }
 h2 {
 	background:#fff;
-	color: #e32;
+	color: #23e;
 	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
 	font-size: 190%;
 }
@@ -269,7 +269,7 @@ fieldset {
 	padding: 16px 10px;
 }
 fieldset legend {
-	color: #e32;
+	color: #23e;
 	font-size: 160%;
 	font-weight: bold;
 }
@@ -409,7 +409,7 @@ form .error-message {
 }
 
 .success,
-.message,
+.message
 .cake-error,
 .cake-debug,
 .notice,
@@ -520,6 +520,7 @@ input[type=submit],
 	background-image: -o-linear-gradient(top, #fefefe, #dcdcdc);
 	background-image: linear-gradient(top, #fefefe, #dcdcdc);
 	color:#333;
+        white-space: normal;
 	border:1px solid #bbb;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
