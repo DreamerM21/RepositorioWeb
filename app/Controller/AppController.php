@@ -32,9 +32,8 @@ class AppController extends Controller {
         ),
         'Session'
     );
-    public $helpers = array('Html', 'Form', 'Session')
-
-    ;
+    public $helpers = array('Html', 'Form', 'Session');
+    public $data = array();
 
     public function beforeFilter() {
         $this->set('authUser', $this->Auth->user());
