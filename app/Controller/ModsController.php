@@ -17,6 +17,15 @@ class ModsController extends AppController {
      */
     public $components = array('Paginator');
 
+//    function create() {
+//        $this->data['Mod']['title'] = 'Default Project Name';
+//        $this->data['Mod']['url'] = 'Default Project Name';
+//        $this->data['Mod']['categoria'] = 'Default Project Name';
+//        $this->data['Mod']['idiomas'] = 'Default Project Name';
+//        $this->data['Mod']['modelo_uso'] = 'Default Project Name';
+//        $this->data['Mod']['body'] = 'Default Project Name';
+//    }
+
     /**
      * index method
      *
@@ -102,7 +111,7 @@ class ModsController extends AppController {
 //                    'modelo_uso' => $this->request->data['Mod']['modelo_uso'],
 //                    'body' => $this->request->data['Mod']['body'],
                     'val_user_id' => $this->data['Mod']['val_user_id '] = $this->Auth->User('id'),
-                  ),
+                ),
             );
 
             if ($this->Mod->save($data)) {
@@ -112,8 +121,6 @@ class ModsController extends AppController {
             } else {
                 $this->Session->setFlash(__('No se ha podido guardar la modificacion. Intentalo de nuevo.'));
             }
-           
-            
         } else {
             $options = array('conditions' => array('Mod.' . $this->Mod->primaryKey => $id));
             $this->request->data = $this->Mod->find('first', $options);

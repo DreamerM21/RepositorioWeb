@@ -4,10 +4,10 @@
         <legend><?php echo __('Proponer Modificacion'); ?></legend>
         <?php
         echo $this->Form->input('entrada_id', array(
-                'label' => 'Entrada'
+                'label' => 'Entrada', 'inputDefaults' 
             ));
         echo $this->Form->input('title', array(
-                'label' => 'Titulo'
+                'label' => 'Titulo' 
             ));
         echo $this->Form->input('url', array(
                 'label' => 'URL'

@@ -59,6 +59,7 @@
                 echo "<td>";
 
                 echo h($entrada['Entrada']['val_user_id']);
+//                echo $this->Html->link($entrada['ValUser']['username'], array('controller' => 'users', 'action' => 'view', $entrada['Valuser']['id']));
                 echo "&nbsp";
                 echo "</td>";
                 echo "<td>";

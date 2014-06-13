@@ -1,5 +1,5 @@
 <div class="mods index">
-	<h2><?php echo __('Mods'); ?></h2>
+	<h2><?php echo __('Modificaciones'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>

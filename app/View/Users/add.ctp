@@ -12,6 +12,7 @@
         echo $this->Form->input('nombre_completo', array(
                 'label' => 'Nombre Completo'
             ));
+
         ?>
     </fieldset>
     <?php echo $this->Form->end(__('Enviar')); ?>
@@ -23,7 +24,7 @@
 <!--        <li><?php echo $this->Html->link(__('Ver Usuarios'), array('action' => 'index')); ?></li>
         <li><?php echo $this->Html->link(__('Ver Grupos'), array('controller' => 'groups', 'action' => 'index')); ?> </li>
         <li><?php echo $this->Html->link(__('Nuevo Grupo'), array('controller' => 'groups', 'action' => 'add')); ?> </li>-->
-        <li><?php echo $this->Html->link(__('Home'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
+        <li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
 <!--        <li><?php echo $this->Html->link(__('Nueva Entrada'), array('controller' => 'entradas', 'action' => 'add')); ?> </li>
         <li><?php echo $this->Html->link(__('Ver Modificaciones'), array('controller' => 'mods', 'action' => 'index')); ?> </li>-->
         <!--<li><?php echo $this->Html->link(__('Nueva Modificacion'), array('controller' => 'mods', 'action' => 'add')); ?> </li>-->
