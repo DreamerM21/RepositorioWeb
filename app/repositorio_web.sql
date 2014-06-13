@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2014 a las 16:13:19
+-- Tiempo de generación: 13-06-2014 a las 20:33:24
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -193,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `entradas` (
   `modified` datetime DEFAULT NULL,
   `val_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Volcado de datos para la tabla `entradas`
@@ -203,7 +203,10 @@ INSERT INTO `entradas` (`id`, `user_id`, `title`, `body`, `url`, `categoria`, `i
 (1, 1, 'RepositorioWeb', 'Una pagina genial', 'http://localhost/repositorioWeb', 'Divulgacion', 'EspaÃ±ol', 'Gratuito', '2014-06-08 20:36:17', '2014-06-09 01:05:20', 1),
 (2, 2, 'Youtube', 'Sitio de videos', 'https://www.youtube.com', 'Ocio y entretenimiento', 'Multiples', 'Gratuito con publicidad', '2014-06-08 20:38:06', '2014-06-09 00:54:50', 1),
 (3, 1, 'Prueba', 'Prueba Prueba Prueba Prueba Prueba ', 'Anonima', 'Ensayo', 'Esperanto', 'Test', '2014-06-10 03:06:25', '2014-06-10 03:32:18', 1),
-(7, 2, 'Prueba 2', 'Prueba para el documento', 'URL larga con sus URIs y todo', 'Test', 'Esperanto', 'Pruebas', '2014-06-10 14:28:43', '2014-06-10 14:33:19', 2);
+(7, 2, 'Prueba 2', 'Prueba para el documento', 'URL larga con sus URIs y todo', 'Test', 'Esperanto', 'Pruebas', '2014-06-10 14:28:43', '2014-06-10 14:33:19', 2),
+(8, 2, 'fdfas', 'sdsdd', 'fsdfsf', 'Dffff', 'ddd', 'sdd', '2014-06-12 10:31:37', '2014-06-12 10:38:25', 2),
+(10, 2, 'dfafd', 'asfsdaf', 'fddfasdfafads', 'asdfasdffasd', 'asdffdsafsd', 'fsdf', '2014-06-12 10:47:00', '2014-06-12 18:18:12', 2),
+(11, 2, 'fsdfsdf', 'agfsf', 'ffff', 'fdsffasdf', 'sdfsfsggh', 'Gaghash', '2014-06-12 10:47:13', '2014-06-12 10:47:13', NULL);
 
 -- --------------------------------------------------------
 
@@ -250,14 +253,18 @@ CREATE TABLE IF NOT EXISTS `mods` (
   `modified` datetime DEFAULT NULL,
   `val_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Volcado de datos para la tabla `mods`
 --
 
 INSERT INTO `mods` (`id`, `user_id`, `entrada_id`, `title`, `body`, `url`, `categoria`, `idiomas`, `modelo_uso`, `created`, `modified`, `val_user_id`) VALUES
-(7, 2, 7, 'Prueba X', '', '', '', 'Swajili', 'De pago y de lujo', '2014-06-10 14:51:04', '2014-06-10 15:06:38', 2);
+(17, 1, 1, '', '', 'garcolal.zz.mu', '', '', '', '2014-06-11 23:07:01', '2014-06-12 18:12:16', 2),
+(18, 2, 7, 'ffdasfasdasd', '', '', '', '', '', '2014-06-12 18:05:41', '2014-06-12 18:05:41', NULL),
+(19, 2, 7, 'ffdasfasdasd', '', '', '', '', '', '2014-06-12 18:06:50', '2014-06-12 18:06:50', NULL),
+(20, 2, 1, '', '', '', '', '', '', '2014-06-12 18:07:39', '2014-06-12 18:07:39', NULL),
+(21, 2, 10, '', '', 'tururu', '', '', '', '2014-06-12 18:40:55', '2014-06-12 18:42:06', 2);
 
 -- --------------------------------------------------------
 
