@@ -14,7 +14,7 @@
 			<th><?php echo $this->Paginator->sort('usuario validador'); ?></th>
 			<th><?php echo $this->Paginator->sort('fecha de creacion'); ?></th>
 			<th><?php echo $this->Paginator->sort('Fecha de modificacion'); ?></th>
-			<!--<th class="actions"><?php echo __('opciones'); ?></th>-->
+			<th class="actions"><?php echo __('Opciones'); ?></th>
 	</tr>
 	<?php foreach ($mods as $mod): ?>
 	<tr>
