@@ -13,7 +13,7 @@
 		</dd>
 		<dt><?php echo __('Usuario'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($mod['User']['id'], array('controller' => 'users', 'action' => 'view', $mod['User']['id'])); ?>
+			<?php echo $this->Html->link($mod['User']['username'], array('controller' => 'users', 'action' => 'view', $mod['User']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Titulo'); ?></dt>

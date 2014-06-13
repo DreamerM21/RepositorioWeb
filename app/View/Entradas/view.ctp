@@ -8,7 +8,7 @@
         </dd>
         <dt><?php echo __('Usuario'); ?></dt>
         <dd>
-            <?php echo $this->Html->link($entrada['User']['id'], array('controller' => 'users', 'action' => 'view', $entrada['User']['id'])); ?>
+            <?php echo $this->Html->link($entrada['User']['username'], array('controller' => 'users', 'action' => 'view', $entrada['User']['id'])); ?>
             &nbsp;
         </dd>
         <dt><?php echo __('Titulo'); ?></dt>
@@ -41,17 +41,17 @@
             <?php echo h($entrada['Entrada']['body']); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('U.Validador'); ?></dt>
+        <dt><?php echo __('Usuario Validador'); ?></dt>
         <dd>
             <?php echo h($entrada['Entrada']['val_user_id']); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('F.Creacion'); ?></dt>
+        <dt><?php echo __('Fecha de Creacion'); ?></dt>
         <dd>
             <?php echo h($entrada['Entrada']['created']); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('F.Modificacion'); ?></dt>
+        <dt><?php echo __('Fecha de Modificacion'); ?></dt>
         <dd>
             <?php echo h($entrada['Entrada']['modified']); ?>
             &nbsp;

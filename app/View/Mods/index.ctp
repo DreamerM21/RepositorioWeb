@@ -23,7 +23,7 @@
 			<?php echo $this->Html->link($mod['Entrada']['title'], array('controller' => 'entradas', 'action' => 'view', $mod['Entrada']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($mod['User']['id'], array('controller' => 'users', 'action' => 'view', $mod['User']['id'])); ?>
+			<?php echo $this->Html->link($mod['User']['username'], array('controller' => 'users', 'action' => 'view', $mod['User']['id'])); ?>
 		</td>
 		<td><?php echo h($mod['Mod']['title']); ?>&nbsp;</td>
 		<td><?php echo h($mod['Mod']['url']); ?>&nbsp;</td>

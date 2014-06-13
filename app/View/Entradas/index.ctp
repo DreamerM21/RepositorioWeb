@@ -25,7 +25,7 @@
                 echo "&nbsp";
                 echo "</td>";
                 echo "<td>";
-                echo $this->Html->link($entrada['User']['id'], array('controller' => 'users', 'action' => 'view', $entrada['User']['id']));
+                echo $this->Html->link($entrada['User']['username'], array('controller' => 'users', 'action' => 'view', $entrada['User']['id']));
                 echo "&nbsp";
                 echo "</td>";
                 echo "<td>";
@@ -137,7 +137,7 @@
                     echo "&nbsp";
                     echo "</td>";
                     echo "<td>";
-                    echo $this->Html->link($entrada['User']['id'], array('controller' => 'users', 'action' => 'view', $entrada['User']['id']));
+                    echo $this->Html->link($entrada['User']['username'], array('controller' => 'users', 'action' => 'view', $entrada['User']['id']));
                     echo "&nbsp";
                     echo "</td>";
                     echo "<td>";
