@@ -11,17 +11,17 @@
 			<?php echo $this->Html->link($mod['Entrada']['title'], array('controller' => 'entradas', 'action' => 'view', $mod['Entrada']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('User'); ?></dt>
+		<dt><?php echo __('Usuario'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($mod['User']['id'], array('controller' => 'users', 'action' => 'view', $mod['User']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Title'); ?></dt>
+		<dt><?php echo __('Titulo'); ?></dt>
 		<dd>
 			<?php echo h($mod['Mod']['title']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Url'); ?></dt>
+		<dt><?php echo __('URL'); ?></dt>
 		<dd>
 			<?php echo h($mod['Mod']['url']); ?>
 			&nbsp;
@@ -36,7 +36,7 @@
 			<?php echo h($mod['Mod']['idiomas']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Modelo Uso'); ?></dt>
+		<dt><?php echo __('Modelo de Uso'); ?></dt>
 		<dd>
 			<?php echo h($mod['Mod']['modelo_uso']); ?>
 			&nbsp;
@@ -46,17 +46,17 @@
 			<?php echo h($mod['Mod']['body']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Val User Id'); ?></dt>
+		<dt><?php echo __('Usuario Validador'); ?></dt>
 		<dd>
 			<?php echo h($mod['Mod']['val_user_id']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Created'); ?></dt>
+		<dt><?php echo __('Fecha de Creacion'); ?></dt>
 		<dd>
 			<?php echo h($mod['Mod']['created']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
+		<dt><?php echo __('Fecha de Modificacion'); ?></dt>
 		<dd>
 			<?php echo h($mod['Mod']['modified']); ?>
 			&nbsp;
@@ -64,13 +64,13 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Menu'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Validar Modificacion'), array('action' => 'edit', $mod['Mod']['id'])); ?> </li>
 		<!--<li><?php echo $this->Form->postLink(__('Eliminar Modificacion'), array('action' => 'delete', $mod['Mod']['id']), null, __('Are you sure you want to delete # %s?', $mod['Mod']['id'])); ?> </li>-->
 		<!--<li><?php echo $this->Html->link(__('Ver Modificiaciones'), array('action' => 'index')); ?> </li>-->
 		<!--<li><?php echo $this->Html->link(__('Nueva Modificacion'), array('action' => 'add')); ?> </li>-->
-		<li><?php echo $this->Html->link(__('Home'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
 <!--		<li><?php echo $this->Html->link(__('Nueva Entrada'), array('controller' => 'entradas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Ver Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>-->

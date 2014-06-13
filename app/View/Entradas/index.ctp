@@ -3,17 +3,17 @@
     <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?php echo $this->Paginator->sort('id'); ?></th>
-            <th><?php echo $this->Paginator->sort('user_id'); ?></th>
-            <th><?php echo $this->Paginator->sort('title'); ?></th>
-            <th><?php echo $this->Paginator->sort('url'); ?></th>
+            <th><?php echo $this->Paginator->sort('usuario'); ?></th>
+            <th><?php echo $this->Paginator->sort('titulo'); ?></th>
+            <th><?php echo $this->Paginator->sort('URL'); ?></th>
             <th><?php echo $this->Paginator->sort('categoria'); ?></th>
             <th><?php echo $this->Paginator->sort('idiomas'); ?></th>
-            <th><?php echo $this->Paginator->sort('modelo_uso'); ?></th>
-            <th><?php echo $this->Paginator->sort('body'); ?></th>
-            <th><?php echo $this->Paginator->sort('val_user_id'); ?></th>
-            <th><?php echo $this->Paginator->sort('created'); ?></th>
-            <th><?php echo $this->Paginator->sort('modified'); ?></th>
-            <th class="actions"><?php echo __('Actions'); ?></th>
+            <th><?php echo $this->Paginator->sort('Modelo de Uso'); ?></th>
+            <th><?php echo $this->Paginator->sort('cuerpo'); ?></th>
+            <th><?php echo $this->Paginator->sort('Usuario Validador'); ?></th>
+            <th><?php echo $this->Paginator->sort('Fecha de Creacion'); ?></th>
+            <th><?php echo $this->Paginator->sort('Fecha de Modificacion'); ?></th>
+            <th class="actions"><?php echo __('Opciones'); ?></th>
         </tr>
 
         <?php
@@ -94,13 +94,13 @@
             echo $this->Paginator->sort('id');
             echo "</th>";
             echo "<th>";
-            echo $this->Paginator->sort('user_id');
+            echo $this->Paginator->sort('Usuario');
             echo "</th>";
             echo "<th>";
-            echo $this->Paginator->sort('title');
+            echo $this->Paginator->sort('Titulo');
             echo "</th>";
             echo "<th>";
-            echo $this->Paginator->sort('url');
+            echo $this->Paginator->sort('URL');
             echo "</th>";
             echo "<th>";
             echo $this->Paginator->sort('categoria');
@@ -109,22 +109,22 @@
             echo $this->Paginator->sort('idiomas');
             echo "</th>";
             echo "<th>";
-            echo $this->Paginator->sort('modelo_uso');
+            echo $this->Paginator->sort('modelo de Uso');
             echo "</th>";
             echo "<th>";
-            echo $this->Paginator->sort('body');
+            echo $this->Paginator->sort('Cuerpo');
             echo "</th>";
             echo "<th>";
-            echo $this->Paginator->sort('val_user_id');
+            echo $this->Paginator->sort('Usuario Validador');
             echo "</th>";
             echo "<th>";
-            echo $this->Paginator->sort('created');
+            echo $this->Paginator->sort('Fecha de Creacion');
             echo "</th>";
             echo "<th>";
-            echo $this->Paginator->sort('modified');
+            echo $this->Paginator->sort('Fecha de Modificacion');
             echo "<th>";
             echo "<th class='actions'>";
-            echo __('Actions');
+            echo __('Opciones');
             echo "<th>";
             echo "</tr>";
 
@@ -205,14 +205,14 @@
         ?>	</p>
     <div class="paging">
         <?php
-        echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+        echo $this->Paginator->prev('< ' . __('Anterior'), array(), null, array('class' => 'prev disabled'));
         echo $this->Paginator->numbers(array('separator' => ''));
-        echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+        echo $this->Paginator->next(__('Siguiente') . ' >', array(), null, array('class' => 'next disabled'));
         ?>
     </div>
 </div>
 <div class="actions">
-    <h3><?php echo __('Actions'); ?></h3>
+    <h3><?php echo __('Menu'); ?></h3>
     <ul>
         <li><?php echo $this->Html->link(__('Nueva Entrada'), array('action' => 'add')); ?></li>
         <?php

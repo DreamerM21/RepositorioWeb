@@ -3,10 +3,10 @@
     <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?php echo $this->Paginator->sort('id'); ?></th>
-            <th><?php echo $this->Paginator->sort('name'); ?></th>
-            <th><?php echo $this->Paginator->sort('created'); ?></th>
-            <th><?php echo $this->Paginator->sort('modified'); ?></th>
-            <th class="actions"><?php echo __('Actions'); ?></th>
+            <th><?php echo $this->Paginator->sort('Nombre'); ?></th>
+            <th><?php echo $this->Paginator->sort('Fecha de Creacion'); ?></th>
+            <th><?php echo $this->Paginator->sort('Fecha de Modificacion'); ?></th>
+            <th class="actions"><?php echo __('Menu'); ?></th>
         </tr>
         <?php foreach ($groups as $group): ?>
             <tr>
@@ -30,19 +30,19 @@
         ?>	</p>
     <div class="paging">
         <?php
-        echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+        echo $this->Paginator->prev('< ' . __('Anterior'), array(), null, array('class' => 'prev disabled'));
         echo $this->Paginator->numbers(array('separator' => ''));
-        echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+        echo $this->Paginator->next(__('Siguiente') . ' >', array(), null, array('class' => 'next disabled'));
         ?>
     </div>
 </div>
 <div class="actions">
-    <h3><?php echo __('Actions'); ?></h3>
+    <h3><?php echo __('Menu'); ?></h3>
     <ul>
         <li><?php echo $this->Html->link(__('Nuevo Grupo'), array('action' => 'add')); ?></li>
         <li><?php echo $this->Html->link(__('Ver Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 
         <li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-        <li><?php echo $this->Html->link(__('Home'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
+        <li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
     </ul>
 </div>

@@ -1,17 +1,23 @@
 <div class="users form">
-    <?php echo $this->Form->create('User'); ?>
+    <?php echo $this->Form->create('Usuario'); ?>
     <fieldset>
         <legend><?php echo __('Nuevo Usuario'); ?></legend>
         <?php
-        echo $this->Form->input('username');
-        echo $this->Form->input('password');
-        echo $this->Form->input('nombre_completo');
+        echo $this->Form->input('username', array(
+                'label' => 'Alias'
+            ));
+        echo $this->Form->input('password', array(
+                'label' => 'Contraseña'
+            ));
+        echo $this->Form->input('nombre_completo', array(
+                'label' => 'Nombre Completo'
+            ));
         ?>
     </fieldset>
     <?php echo $this->Form->end(__('Enviar')); ?>
 </div>
 <div class="actions">
-    <h3><?php echo __('Actions'); ?></h3>
+    <h3><?php echo __('Menu'); ?></h3>
     <ul>
 
 <!--        <li><?php echo $this->Html->link(__('Ver Usuarios'), array('action' => 'index')); ?></li>

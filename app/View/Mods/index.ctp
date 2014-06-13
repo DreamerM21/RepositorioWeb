@@ -3,18 +3,18 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('entrada_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('title'); ?></th>
-			<th><?php echo $this->Paginator->sort('url'); ?></th>
+			<th><?php echo $this->Paginator->sort('entrada'); ?></th>
+			<th><?php echo $this->Paginator->sort('usuario'); ?></th>
+			<th><?php echo $this->Paginator->sort('titulo'); ?></th>
+			<th><?php echo $this->Paginator->sort('URL'); ?></th>
 			<th><?php echo $this->Paginator->sort('categoria'); ?></th>
 			<th><?php echo $this->Paginator->sort('idiomas'); ?></th>
-			<th><?php echo $this->Paginator->sort('modelo_uso'); ?></th>
-			<th><?php echo $this->Paginator->sort('body'); ?></th>
-			<th><?php echo $this->Paginator->sort('val_user_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<!--<th class="actions"><?php echo __('Actions'); ?></th>-->
+			<th><?php echo $this->Paginator->sort('Modelo de uso'); ?></th>
+			<th><?php echo $this->Paginator->sort('Cuerpo'); ?></th>
+			<th><?php echo $this->Paginator->sort('usuario validador'); ?></th>
+			<th><?php echo $this->Paginator->sort('fecha de creacion'); ?></th>
+			<th><?php echo $this->Paginator->sort('Fecha de modificacion'); ?></th>
+			<!--<th class="actions"><?php echo __('opciones'); ?></th>-->
 	</tr>
 	<?php foreach ($mods as $mod): ?>
 	<tr>
@@ -57,9 +57,9 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Menu'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Home'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
 		<!--<li><?php echo $this->Html->link(__('Nueva Entrada'), array('controller' => 'entradas', 'action' => 'add')); ?> </li>-->
 <!--		<li><?php echo $this->Html->link(__('Ver Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>-->

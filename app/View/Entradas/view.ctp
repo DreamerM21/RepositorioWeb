@@ -6,17 +6,17 @@
             <?php echo h($entrada['Entrada']['id']); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('User'); ?></dt>
+        <dt><?php echo __('Usuario'); ?></dt>
         <dd>
             <?php echo $this->Html->link($entrada['User']['id'], array('controller' => 'users', 'action' => 'view', $entrada['User']['id'])); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('Title'); ?></dt>
+        <dt><?php echo __('Titulo'); ?></dt>
         <dd>
             <?php echo h($entrada['Entrada']['title']); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('Url'); ?></dt>
+        <dt><?php echo __('URL'); ?></dt>
         <dd>
             <?php echo h($entrada['Entrada']['url']); ?>
             &nbsp;
@@ -31,27 +31,27 @@
             <?php echo h($entrada['Entrada']['idiomas']); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('Modelo Uso'); ?></dt>
+        <dt><?php echo __('Modelo de Uso'); ?></dt>
         <dd>
             <?php echo h($entrada['Entrada']['modelo_uso']); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('Body'); ?></dt>
+        <dt><?php echo __('Cuerpo'); ?></dt>
         <dd>
             <?php echo h($entrada['Entrada']['body']); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('Val User Id'); ?></dt>
+        <dt><?php echo __('U.Validador'); ?></dt>
         <dd>
             <?php echo h($entrada['Entrada']['val_user_id']); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('Created'); ?></dt>
+        <dt><?php echo __('F.Creacion'); ?></dt>
         <dd>
             <?php echo h($entrada['Entrada']['created']); ?>
             &nbsp;
         </dd>
-        <dt><?php echo __('Modified'); ?></dt>
+        <dt><?php echo __('F.Modificacion'); ?></dt>
         <dd>
             <?php echo h($entrada['Entrada']['modified']); ?>
             &nbsp;
@@ -59,11 +59,11 @@
     </dl>
 </div>
 <div class="actions">
-    <h3><?php echo __('Actions'); ?></h3>
+    <h3><?php echo __('Menu'); ?></h3>
     <ul>
             <!--<li><?php echo $this->Html->link(__('Modificar Entrada'), array('action' => 'edit', $entrada['Entrada']['id'])); ?> </li>-->
 
-        <li><?php echo $this->Html->link(__('Home'), array('action' => 'index')); ?> </li>
+        <li><?php echo $this->Html->link(__('Inicio'), array('action' => 'index')); ?> </li>
         <?php $uid = AuthComponent::user('group_id');
         ; ?>
         <?php if ($uid == 1): ?>
@@ -88,18 +88,18 @@
             <table cellpadding = "0" cellspacing = "0">
                 <tr>
                     <th><?php echo __('Id'); ?></th>
-                    <th><?php echo __('Entrada Id'); ?></th>
-                    <th><?php echo __('User Id'); ?></th>
-                    <th><?php echo __('Title'); ?></th>
-                    <th><?php echo __('Url'); ?></th>
+                    <th><?php echo __('Entrada'); ?></th>
+                    <th><?php echo __('Usuario'); ?></th>
+                    <th><?php echo __('Titulo'); ?></th>
+                    <th><?php echo __('URL'); ?></th>
                     <th><?php echo __('Categoria'); ?></th>
                     <th><?php echo __('Idiomas'); ?></th>
-                    <th><?php echo __('Modelo Uso'); ?></th>
-                    <th><?php echo __('Body'); ?></th>
-                    <th><?php echo __('Val User Id'); ?></th>
-                    <th><?php echo __('Created'); ?></th>
-                    <th><?php echo __('Modified'); ?></th>
-                    <th class="actions"><?php echo __('Actions'); ?></th>
+                    <th><?php echo __('Modelo de Uso'); ?></th>
+                    <th><?php echo __('Cuerpo'); ?></th>
+                    <th><?php echo __('U.Validador'); ?></th>
+                    <th><?php echo __('F.Creacion'); ?></th>
+                    <th><?php echo __('F.Modificacion'); ?></th>
+                    <th class="actions"><?php echo __('Opciones'); ?></th>
                 </tr>
         <?php foreach ($entrada['Mod'] as $mod): ?>
                     <tr>

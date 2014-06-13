@@ -1,22 +1,22 @@
 <div class="groups view">
-<h2><?php echo __('Group'); ?></h2>
+<h2><?php echo __('Grupo'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
 			<?php echo h($group['Group']['id']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Name'); ?></dt>
+		<dt><?php echo __('Nombre'); ?></dt>
 		<dd>
 			<?php echo h($group['Group']['name']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Created'); ?></dt>
+		<dt><?php echo __('Fecha de Creacion'); ?></dt>
 		<dd>
 			<?php echo h($group['Group']['created']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
+		<dt><?php echo __('Fecha de Modificacion'); ?></dt>
 		<dd>
 			<?php echo h($group['Group']['modified']); ?>
 			&nbsp;
@@ -24,10 +24,10 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Menu'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Modificar Grupo'), array('action' => 'edit', $group['Group']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Eliminar Grupo'), array('action' => 'delete', $group['Group']['id']), null, __('Are you sure you want to delete # %s?', $group['Group']['id'])); ?> </li>
+		<!--<li><?php echo $this->Form->postLink(__('Eliminar Grupo'), array('action' => 'delete', $group['Group']['id']), null, __('Are you sure you want to delete # %s?', $group['Group']['id'])); ?> </li>-->
 		<li><?php echo $this->Html->link(__('Mostrar Grupos'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Nuevo Grupo'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Mostrar Usuarios'), array('controller' => 'users', 'action' => 'index')); ?> </li>
@@ -40,13 +40,13 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Username'); ?></th>
-		<th><?php echo __('Password'); ?></th>
+		<th><?php echo __('Alias'); ?></th>
+		<th><?php echo __('Contraseña'); ?></th>
 		<th><?php echo __('Nombre Completo'); ?></th>
-		<th><?php echo __('Group Id'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-		<th><?php echo __('Modified'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
+		<th><?php echo __('Grupo'); ?></th>
+		<th><?php echo __('Fecha de Creacion'); ?></th>
+		<th><?php echo __('Fecha de Modificacion'); ?></th>
+		<th class="actions"><?php echo __('Opciones'); ?></th>
 	</tr>
 	<?php foreach ($group['User'] as $user): ?>
 		<tr>

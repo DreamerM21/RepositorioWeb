@@ -1,15 +1,15 @@
 <div class="users index">
-	<h2><?php echo __('Users'); ?></h2>
+	<h2><?php echo __('Usuarios'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('username'); ?></th>
-			<th><?php echo $this->Paginator->sort('password'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_completo'); ?></th>
-			<th><?php echo $this->Paginator->sort('group_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo $this->Paginator->sort('Alias'); ?></th>
+			<th><?php echo $this->Paginator->sort('Contraseña'); ?></th>
+			<th><?php echo $this->Paginator->sort('Nombre Completo'); ?></th>
+			<th><?php echo $this->Paginator->sort('Grupo'); ?></th>
+			<th><?php echo $this->Paginator->sort('Fecha de Creacion'); ?></th>
+			<th><?php echo $this->Paginator->sort('Fecha de Modificacion'); ?></th>
+			<th class="actions"><?php echo __('Opciones'); ?></th>
 	</tr>
 	<?php foreach ($users as $user): ?>
 	<tr>
@@ -45,12 +45,12 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Menu'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(__('Ver Grupos'), array('controller' => 'groups', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Nuevo Grupo'), array('controller' => 'groups', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('Home'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'entradas', 'action' => 'index')); ?> </li>
 		<!--<li><?php echo $this->Html->link(__('Nueva Entrada'), array('controller' => 'entradas', 'action' => 'add')); ?> </li>-->
 		<!--<li><?php echo $this->Html->link(__('Ver modificaciones'), array('controller' => 'mods', 'action' => 'index')); ?> </li>-->
 		<!--<li><?php echo $this->Html->link(__('Nueva Modificacion'), array('controller' => 'mods', 'action' => 'add')); ?> </li>-->
