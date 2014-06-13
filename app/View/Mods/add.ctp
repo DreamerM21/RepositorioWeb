@@ -4,7 +4,7 @@
         <legend><?php echo __('Proponer Modificacion'); ?></legend>
         <?php
         echo $this->Form->input('entrada_id', array(
-                'label' => 'Entrada', 'inputDefaults' 
+                'label' => 'Entrada' 
             ));
         echo $this->Form->input('title', array(
                 'label' => 'Titulo' 
