@@ -49,12 +49,12 @@ class AppController extends Controller {
         );
         $this->Auth->loginRedirect = array(
             'controller' => 'entradas',
-            'action' => 'add'
+            'action' => 'index'
         );
-        $this->Auth->loginRedirect = array(
-            'controller' => 'mods',
-            'action' => 'add'
-        );
+//        $this->Auth->loginRedirect = array(
+//            'controller' => 'mods',
+//            'action' => 'add'
+//        );
         $this->Auth->allow('display');
     }
 
