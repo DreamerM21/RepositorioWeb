@@ -4,7 +4,7 @@
         <legend><?php echo __('Validar Modificacion'); ?></legend>
         <?php
         echo $this->Form->hidden('id');
-        echo $this->Form->input('entrada_id', array('readonly'=> 'readonly', 'label' => 'Entrada'));
+        echo $this->Form->hidden('entrada_id', array('readonly'=> 'readonly', 'label' => 'Entrada'));
         echo $this->Form->input('title', array('readonly'=> 'readonly', 'label' => 'titulo'));
         echo $this->Form->input('url', array('readonly'=> 'readonly', 'label' => 'URL'));
         echo $this->Form->input('categoria', array('readonly'=> 'readonly'));
