@@ -5,11 +5,11 @@
         <?php
         echo $this->Form->hidden('id');
         echo $this->Form->hidden('entrada_id', array('readonly'=> 'readonly', 'label' => 'Entrada'));
-        echo $this->Form->input('title', array('readonly'=> 'readonly', 'label' => 'titulo'));
+        echo $this->Form->input('title', array('readonly'=> 'readonly', 'label' => 'Titulo'));
         echo $this->Form->input('url', array('readonly'=> 'readonly', 'label' => 'URL'));
         echo $this->Form->input('categoria', array('readonly'=> 'readonly'));
         echo $this->Form->input('idiomas', array('readonly'=> 'readonly'));
-        echo $this->Form->input('modelo_uso', array('readonly'=> 'readonly', 'label' => 'modelo de uso'));
+        echo $this->Form->input('modelo_uso', array('readonly'=> 'readonly', 'label' => 'Modelo de uso'));
         echo $this->Form->input('body', array('readonly'=> 'readonly', 'label' => 'Cuerpo'));
         ?>
     </fieldset>
