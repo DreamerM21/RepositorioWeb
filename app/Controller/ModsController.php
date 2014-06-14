@@ -17,15 +17,6 @@ class ModsController extends AppController {
      */
     public $components = array('Paginator');
 
-//    function create() {
-//        $this->data['Mod']['title'] = 'Default Project Name';
-//        $this->data['Mod']['url'] = 'Default Project Name';
-//        $this->data['Mod']['categoria'] = 'Default Project Name';
-//        $this->data['Mod']['idiomas'] = 'Default Project Name';
-//        $this->data['Mod']['modelo_uso'] = 'Default Project Name';
-//        $this->data['Mod']['body'] = 'Default Project Name';
-//    }
-
     /**
      * index method
      *
@@ -56,7 +47,10 @@ class ModsController extends AppController {
      *
      * @return void
      */
-    public function add() {
+    public function add($entrada_id = null) {
+        $this->loadModel('Entrada');
+        $options = array('conditions' => array('Entrada.' . $this->Entrada->primaryKey => $entrada_id));
+        $this->set('entrada', $this->Entrada->find('first', $options));
 
         if ($this->request->is('post')) {
             $data = null;
@@ -69,7 +63,7 @@ class ModsController extends AppController {
                     'idiomas' => $this->request->data['Mod']['idiomas'],
                     'modelo_uso' => $this->request->data['Mod']['modelo_uso'],
                     'body' => $this->request->data['Mod']['body'],
-                    'user_id' => $this->data['Mod']['user_id'] = $this->Auth->User('id')
+                    'user_id' => $this->Auth->User('id')
                 ),
             );
 
@@ -95,26 +89,32 @@ class ModsController extends AppController {
      * @return void
      */
     public function edit($id = null) {
+        
         if (!$this->Mod->exists($id)) {
             throw new NotFoundException(__('Modificacion no valida'));
         }
         if ($this->request->is(array('post', 'put'))) {
-
+            $this->loadModel('Entrada');
+            $entrada = $this->request->data['Mod']['entrada_id'];
+            $options = array('conditions' => array('Entrada.' . $this->Entrada->primaryKey => $entrada));
+            $this->set('entrada', $this->Entrada->find('first', $options));
             $data = null;
             $data = array('Mod' => array(
                     'id' => $this->request->data['Mod']['id'],
-//                    'entrada_id' => $this->request->data['Mod']['entrada_id'],
-//                    'title' => $this->request->data['Mod']['title'],
-//                    'url' => $this->request->data['Mod']['url'],
-//                    'categoria' => $this->request->data['Mod']['categoria'],
-//                    'idiomas' => $this->request->data['Mod']['idiomas'],
-//                    'modelo_uso' => $this->request->data['Mod']['modelo_uso'],
-//                    'body' => $this->request->data['Mod']['body'],
-                    'val_user_id' => $this->data['Mod']['val_user_id '] = $this->Auth->User('id'),
-                ),
+                    'val_user_id' => $this->Auth->User('id'),
+                )
+                , 'Entrada' => array(
+                    'id' => $this->request->data['Mod']['entrada_id'],
+                    'title' => $this->request->data['Mod']['title'],
+                    'url' => $this->request->data['Mod']['url'],
+                    'categoria' => $this->request->data['Mod']['categoria'],
+                    'idiomas' => $this->request->data['Mod']['idiomas'],
+                    'modelo_uso' => $this->request->data['Mod']['modelo_uso'],
+                    'body' => $this->request->data['Mod']['body'],
+                    'val_user_id' => $this->Auth->User('id'))
             );
 
-            if ($this->Mod->save($data)) {
+            if ($this->Mod->saveAll($data)) {
 
                 $this->Session->setFlash(__('La modificacion se ha guardado.'));
                 return $this->redirect(array('action' => 'index'));

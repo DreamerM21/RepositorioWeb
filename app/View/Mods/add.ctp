@@ -3,23 +3,30 @@
     <fieldset>
         <legend><?php echo __('Proponer Modificacion'); ?></legend>
         <?php
-        echo $this->Form->input('entrada_id', array(
-                'label' => 'Entrada' 
+
+        echo $this->Form->hidden('entrada_id', array(
+                'label' => 'Entrada', 'default' => $entrada['Entrada']['id']
             ));
         echo $this->Form->input('title', array(
-                'label' => 'Titulo' 
-            ));
+                'label' => 'Titulo' , 'default' => $entrada['Entrada']['title'])
+            );
         echo $this->Form->input('url', array(
-                'label' => 'URL'
+                'label' => 'URL', 'default' => $entrada['Entrada']['url']
             ));
-        echo $this->Form->input('categoria');
-        echo $this->Form->input('idiomas');
+        echo $this->Form->input('categoria', array(
+                'default' => $entrada['Entrada']['categoria']
+            ));
+        echo $this->Form->input('idiomas', array(
+            'default' => $entrada['Entrada']['idiomas']
+            ));
         echo $this->Form->input('modelo_uso', array(
-                'label' => 'Modelo de Uso'
-            ));
+                'label' => 'Modelo de Uso', 'default' => $entrada['Entrada']['modelo_uso']
+            )
+            );
         echo $this->Form->input('body', array(
-                'label' => 'Cuerpo'
-            ));
+                'label' => 'Cuerpo', 'default' => $entrada['Entrada']['body']
+            )
+            );
         ?>
     </fieldset>
     <?php echo $this->Form->end(__('Enviar')); ?>

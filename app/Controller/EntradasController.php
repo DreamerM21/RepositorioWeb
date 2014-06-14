@@ -51,6 +51,7 @@ class EntradasController extends AppController {
      * @return void
      */
     public function add() {
+
         if ($this->request->is('post')) {
             $data = null;
 
@@ -61,7 +62,7 @@ class EntradasController extends AppController {
                     'idiomas' => $this->request->data['Entrada']['idiomas'],
                     'modelo_uso' => $this->request->data['Entrada']['modelo_uso'],
                     'body' => $this->request->data['Entrada']['body'],
-                    'user_id' => $this->data['Entrada']['user_id'] = $this->Auth->User('id')
+                    'user_id' => $this->Auth->User('id')
                 ),
             );
 
@@ -93,7 +94,7 @@ class EntradasController extends AppController {
             $data = null;
             $data = array('Entrada' => array(
                     'id' => $this->request->data['Entrada']['id'],
-                    'val_user_id' => $this->data['Entrada']['val_user_id '] = $this->Auth->User('id')
+                    'val_user_id' => $this->Auth->User('id')
                 ),
             );
             if ($this->Entrada->save($data)) {

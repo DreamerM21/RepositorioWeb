@@ -73,14 +73,14 @@
                         <!--<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'users', 'action' => 'add')); ?> </li>-->
                         <!--<li><?php echo $this->Html->link(__('Ver Modificaciones'), array('controller' => 'mods', 'action' => 'index')); ?> </li>-->
 
-  <!--<li><?php echo $this->Html->link(__('Nueva Modificacion'), array('controller' => 'mods', 'action' => 'add')); ?> </li>-->
+  <!--<li><?php echo $this->Html->link(__('Nueva Modificacion'), array('controller' => 'mods', 'action' => 'add', $entrada['Entrada']['id'])); ?> </li>-->
     </ul>
 </div>
 <div class="related">
     <h3><?php echo __('Realizar Modificacion'); ?></h3>
         <div class="actions">
         <ul>
-            <li><?php echo $this->Html->link(__('Modificar esta Entrada'), array('controller' => 'mods', 'action' => 'add')); ?> </li>
+            <li><?php echo $this->Html->link(__('Modificar esta Entrada'), array('controller' => 'mods', 'action' => 'add', $entrada['Entrada']['id'])); ?> </li>
         </ul>
     </div>
     <?php if ($uid == 1 || $uid == 2): ?> 
