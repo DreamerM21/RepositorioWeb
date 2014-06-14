@@ -105,7 +105,7 @@
                     <tr>
                         <td><?php echo $mod['id']; ?></td>
                         <td><?php echo $mod['entrada_id']; ?></td>
-                        <td><?php echo $mod['user_id']; ?></td>
+                        <td> <?php echo $this->Html->link($mod['User']['username'], array('controller' => 'users', 'action' => 'view', $mod['User']['id'])); ?></td>
                         <td><?php echo $mod['title']; ?></td>
                         <td><?php echo $mod['url']; ?></td>
                         <td><?php echo $mod['categoria']; ?></td>
