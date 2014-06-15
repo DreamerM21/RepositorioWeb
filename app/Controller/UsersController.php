@@ -85,7 +85,12 @@ class UsersController extends AppController {
             throw new NotFoundException(__('Usuario no valido'));
         }
         if ($this->request->is(array('post', 'put'))) {
-            if ($this->User->save($this->request->data)) {
+                        $data = null;
+            $data = array('Entrada' => array(
+                    'id' => $this->request->data['User']['group_id'],
+                ),
+            );
+            if ($this->Entrada->save($data)) {
                 $this->Session->setFlash(__('El usuario ha sido Modificado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
