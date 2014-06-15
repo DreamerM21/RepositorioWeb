@@ -3,25 +3,19 @@
     <fieldset>
         <legend><?php echo __('Nueva Entrada'); ?></legend>
         <?php
-
         echo $this->Form->input('title', array(
-                'label' => 'Titulo',
-            ));
+            'label' => 'Titulo', 'required' => 'false'));
         echo $this->Form->input('url', array(
-                'label' => 'URL',
-            ));
-        echo $this->Form->input('categoria');
-        echo $this->Form->input('idiomas');
+            'label' => 'URL', 'required' => 'false'));
+        echo $this->Form->input('categoria', array('required' => 'false'));
+        echo $this->Form->input('idiomas', array('required' => 'false'));
         echo $this->Form->input('modelo_uso', array(
-                'label' => 'Modelo de Uso',
-            ));
+            'label' => 'Modelo de Uso', 'required' => 'false'));
         echo $this->Form->input('body', array(
-                'label' => 'Cuerpo',
-            ));
-
+            'label' => 'Cuerpo', 'required' => 'false'));
         ?>
     </fieldset>
-    <?php echo $this->Form->end(__('Enviar')); ?>
+        <?php echo $this->Form->end(__('Enviar')); ?>
 </div>
 <div class="actions">
     <h3><?php echo __('Menu'); ?></h3>

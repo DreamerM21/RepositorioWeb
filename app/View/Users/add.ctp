@@ -4,18 +4,17 @@
         <legend><?php echo __('Nuevo Usuario'); ?></legend>
         <?php
         echo $this->Form->input('username', array(
-                'label' => 'Alias'
-            ));
+            'label' => 'Alias', 'label' => 'Nombre Completo',
+        ));
         echo $this->Form->input('password', array(
-                'label' => 'Contraseña'
-            ));
+            'label' => 'Contraseña', 'label' => 'Nombre Completo',
+        ));
         echo $this->Form->input('nombre_completo', array(
-                'label' => 'Nombre Completo'
-            ));
-
+            'label' => 'Nombre Completo', 'label' => 'Nombre Completo',
+        ));
         ?>
     </fieldset>
-    <?php echo $this->Form->end(__('Enviar')); ?>
+        <?php echo $this->Form->end(__('Enviar')); ?>
 </div>
 <div class="actions">
     <h3><?php echo __('Menu'); ?></h3>
