@@ -7,14 +7,11 @@
         echo $this->Form->input('username', array(
                 'label' => 'Alias'
             ));
-        echo $this->Form->input('password', array(
-                'label' => 'Contraseña'
-            ));
         echo $this->Form->input('nombre_completo', array(
-                'label' => 'Nombre Completo'
+                'label' => 'Nombre Completo', 'readonly'=> 'readonly'
             ));
         echo $this->Form->input('group_id', array(
-                'label' => 'Grupo'
+                'label' => 'Grupo', 'readonly'=> 'readonly'
             ));
         ?>
     </fieldset>

@@ -62,8 +62,8 @@ class UsersController extends AppController {
             );
 
             if ($this->User->save($data)) {
-                $this->Session->setFlash(__('El usuario de ha guardado'));
-                $this->redirect(array('action' => 'index'));
+                $this->Session->setFlash(__('El usuario se ha guardado'));
+                $this->redirect(array('controller' => 'entradas', 'action' => 'index'));
             } else {
                 $this->Session->setFlash(__('No se ha podido guardar el usuario. Intentalo de nuevo.'));
             }
@@ -86,7 +86,7 @@ class UsersController extends AppController {
         }
         if ($this->request->is(array('post', 'put'))) {
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('El usuario ha sido guardado.'));
+                $this->Session->setFlash(__('El usuario ha sido Modificado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__('No se ha podido guardar el usuario. Intentalo de nuevo.'));
@@ -123,7 +123,7 @@ class UsersController extends AppController {
     public function login() {
         if ($this->request->is('post')) {
             if ($this->Session->read('Auth.User')) {
-                $this->Session->setFlash('estas dentro.');
+                $this->Session->setFlash('Estas dentro.');
                 return $this->redirect('/');
             }
             if ($this->Auth->login()) {
@@ -143,7 +143,7 @@ class UsersController extends AppController {
 
         $this->Auth->allow('add');
 
-        $this->Auth->allow('initDB'); // We can remove this line after we’re finished
+//        $this->Auth->allow('initDB'); // We can remove this line after we’re finished
     }
 
     public function initDB() {
@@ -170,7 +170,8 @@ class UsersController extends AppController {
 // allow basic users to log out
 
         $this->Acl->allow($group, 'controllers/users/logout');
-
+$group->id = 4;
+$this->Acl->allow($group, 'controllers/users/logout');
 // we add an exit to avoid an ugly "missing views" error message
         echo "all done";
         exit;
