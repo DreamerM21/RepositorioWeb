@@ -5,10 +5,13 @@
         <?php
         echo $this->Form->hidden('id');
         echo $this->Form->input('username', array(
-                'label' => 'Alias', 'readonly'=> 'readonly'
+                'label' => 'Alias', 'readonly' => 'readonly' 
+            ));
+        echo $this->Form->hidden('password', array(
+                'label' => 'Contraseña'
             ));
         echo $this->Form->input('nombre_completo', array(
-                'label' => 'Nombre Completo', 'readonly'=> 'readonly'
+                'label' => 'Nombre Completo', 'readonly' => 'readonly'
             ));
         echo $this->Form->input('group_id', array(
                 'label' => 'Grupo'
@@ -20,8 +23,7 @@
 <div class="actions">
     <h3><?php echo __('Menu'); ?></h3>
     <ul>
-
-        <li><?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $this->Form->value('User.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?></li>
+        <!--<li><?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $this->Form->value('User.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?></li>-->
         <li><?php echo $this->Html->link(__('Ver Usuarios'), array('action' => 'index')); ?></li>
         <li><?php echo $this->Html->link(__('Ver Grupos'), array('controller' => 'groups', 'action' => 'index')); ?> </li>
         <li><?php echo $this->Html->link(__('Nuevo Grupo'), array('controller' => 'groups', 'action' => 'add')); ?> </li>

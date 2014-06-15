@@ -24,10 +24,9 @@ class EntradasController extends AppController {
      */
     public function index() {
 
-            $this->Entrada->recursive = 0;
-      
-            $this->set('entradas', $this->Paginator->paginate());
-        
+        $this->Entrada->recursive = 0;
+
+        $this->set('entradas', $this->Paginator->paginate());
     }
 
     /**

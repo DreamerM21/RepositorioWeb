@@ -85,12 +85,8 @@ class UsersController extends AppController {
             throw new NotFoundException(__('Usuario no valido'));
         }
         if ($this->request->is(array('post', 'put'))) {
-                        $data = null;
-            $data = array('Entrada' => array(
-                    'group_id' => $this->request->data['User']['group_id'],
-                ),
-            );
-            if ($this->User->save($data)) {
+                       
+            if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('El usuario ha sido Modificado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
@@ -103,7 +99,7 @@ class UsersController extends AppController {
         $groups = $this->User->Group->find('list');
         $this->set(compact('groups'));
     }
-
+//5f61fcde3ce8e180d149ecd8909481dabfd77c52 
     /**
      * delete method
      *
