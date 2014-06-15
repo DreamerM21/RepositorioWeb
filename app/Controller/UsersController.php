@@ -90,7 +90,7 @@ class UsersController extends AppController {
                     'group_id' => $this->request->data['User']['group_id'],
                 ),
             );
-            if ($this->Entrada->save($data)) {
+            if ($this->User->save($data)) {
                 $this->Session->setFlash(__('El usuario ha sido Modificado.'));
                 return $this->redirect(array('action' => 'index'));
             } else {
