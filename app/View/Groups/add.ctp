@@ -4,7 +4,7 @@
         <legend><?php echo __('Nuevo Grupo'); ?></legend>
         <?php
         echo $this->Form->input('name', array(
-            'label' => 'Nombre', 'label' => 'Nombre Completo',
+            'label' => 'Nombre', 'required' => 'false'
         ));
         ?>
     </fieldset>

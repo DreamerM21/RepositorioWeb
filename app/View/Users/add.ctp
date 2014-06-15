@@ -1,16 +1,16 @@
 <div class="users form">
-    <?php echo $this->Form->create('Usuario'); ?>
+    <?php echo $this->Form->create('User'); ?>
     <fieldset>
         <legend><?php echo __('Nuevo Usuario'); ?></legend>
         <?php
         echo $this->Form->input('username', array(
-            'label' => 'Alias', 'label' => 'Nombre Completo',
+            'label' => 'Alias', 'required' => 'false'
         ));
         echo $this->Form->input('password', array(
-            'label' => 'Contraseña', 'label' => 'Nombre Completo',
+            'label' => 'Password', 'required' => 'false'
         ));
         echo $this->Form->input('nombre_completo', array(
-            'label' => 'Nombre Completo', 'label' => 'Nombre Completo',
+            'label' => 'Nombre Completo', 'required' => 'false'
         ));
         ?>
     </fieldset>

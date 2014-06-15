@@ -20,7 +20,7 @@ class User extends AppModel {
         'username' => array(
             'notEmpty' => array(
                 'rule' => array('notEmpty'),
-                'message' => 'Campo requerido',
+            'message' => 'Campo Requerido',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -30,7 +30,7 @@ class User extends AppModel {
         'password' => array(
             'notEmpty' => array(
                 'rule' => array('notEmpty'),
-                'message' => 'Campo requerido',
+            'message' => 'Campo Requerido',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -40,7 +40,7 @@ class User extends AppModel {
         'nombre_completo' => array(
             'notEmpty' => array(
                 'rule' => array('notEmpty'),
-                'message' => 'Campo requerido',
+            'message' => 'Campo Requerido',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -50,7 +50,7 @@ class User extends AppModel {
         'group_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-//            'message' => 'Campo requerido',
+            //'message' => 'Your custom message here',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
