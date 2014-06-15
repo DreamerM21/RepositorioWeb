@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2014 a las 20:33:24
+-- Tiempo de generación: 15-06-2014 a las 22:48:46
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `aros` (
   `lft` int(10) DEFAULT NULL,
   `rght` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
 
 --
 -- Volcado de datos para la tabla `aros`
@@ -107,24 +107,30 @@ CREATE TABLE IF NOT EXISTS `aros` (
 
 INSERT INTO `aros` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `rght`) VALUES
 (1, NULL, 'Group', 1, NULL, 1, 4),
-(2, NULL, 'Group', 2, NULL, 5, 10),
-(3, NULL, 'Group', 3, NULL, 11, 14),
-(4, NULL, 'Group', 4, NULL, 15, 20),
-(5, NULL, 'Group', 5, NULL, 21, 22),
+(2, NULL, 'Group', 2, NULL, 5, 12),
+(3, NULL, 'Group', 3, NULL, 13, 26),
+(4, NULL, 'Group', 4, NULL, 27, 32),
+(5, NULL, 'Group', 5, NULL, 33, 34),
 (6, 1, 'User', 1, NULL, 2, 3),
-(7, 2, 'User', 2, NULL, 8, 9),
-(8, 2, 'User', 3, NULL, 6, 7),
-(9, NULL, 'User', 4, NULL, 23, 24),
-(10, NULL, 'User', 5, NULL, 25, 26),
-(11, NULL, 'User', 6, NULL, 27, 28),
-(12, NULL, 'User', 7, NULL, 29, 30),
-(13, NULL, 'User', 8, NULL, 31, 32),
-(14, NULL, 'User', 9, NULL, 33, 34),
-(15, NULL, 'User', 10, NULL, 35, 36),
-(16, NULL, 'User', 13, NULL, 37, 38),
-(17, 3, 'User', 15, NULL, 12, 13),
-(25, 4, 'User', 19, NULL, 16, 17),
-(26, 4, 'User', 16, NULL, 18, 19);
+(7, 2, 'User', 2, NULL, 6, 7),
+(8, 3, 'User', 3, NULL, 22, 23),
+(9, NULL, 'User', 4, NULL, 35, 36),
+(10, NULL, 'User', 5, NULL, 37, 38),
+(11, NULL, 'User', 6, NULL, 39, 40),
+(12, NULL, 'User', 7, NULL, 41, 42),
+(13, NULL, 'User', 8, NULL, 43, 44),
+(14, NULL, 'User', 9, NULL, 45, 46),
+(15, NULL, 'User', 10, NULL, 47, 48),
+(16, NULL, 'User', 13, NULL, 49, 50),
+(17, 3, 'User', 15, NULL, 14, 15),
+(25, 2, 'User', 19, NULL, 8, 9),
+(26, 4, 'User', 16, NULL, 28, 29),
+(27, 3, 'User', 17, NULL, 16, 17),
+(28, 3, 'User', 18, NULL, 18, 19),
+(29, 3, 'User', 19, NULL, 20, 21),
+(30, 4, 'User', 20, NULL, 30, 31),
+(32, 2, 'User', 22, NULL, 10, 11),
+(33, 3, 'User', 24, NULL, 24, 25);
 
 -- --------------------------------------------------------
 
@@ -183,17 +189,17 @@ INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_create`, `_read`, `_update`
 CREATE TABLE IF NOT EXISTS `entradas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `body` text,
-  `url` varchar(45) NOT NULL,
-  `categoria` varchar(45) NOT NULL,
-  `idiomas` varchar(45) NOT NULL,
-  `modelo_uso` varchar(45) NOT NULL,
+  `title` varchar(255) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `body` text CHARACTER SET latin1 COLLATE latin1_spanish_ci,
+  `url` varchar(45) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `categoria` varchar(45) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `idiomas` varchar(45) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `modelo_uso` varchar(45) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `val_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Volcado de datos para la tabla `entradas`
@@ -203,10 +209,7 @@ INSERT INTO `entradas` (`id`, `user_id`, `title`, `body`, `url`, `categoria`, `i
 (1, 1, 'RepositorioWeb', 'Una pagina genial', 'http://localhost/repositorioWeb', 'Divulgacion', 'EspaÃ±ol', 'Gratuito', '2014-06-08 20:36:17', '2014-06-09 01:05:20', 1),
 (2, 2, 'Youtube', 'Sitio de videos', 'https://www.youtube.com', 'Ocio y entretenimiento', 'Multiples', 'Gratuito con publicidad', '2014-06-08 20:38:06', '2014-06-09 00:54:50', 1),
 (3, 1, 'Prueba', 'Prueba Prueba Prueba Prueba Prueba ', 'Anonima', 'Ensayo', 'Esperanto', 'Test', '2014-06-10 03:06:25', '2014-06-10 03:32:18', 1),
-(7, 2, 'Prueba 2', 'Prueba para el documento', 'URL larga con sus URIs y todo', 'Test', 'Esperanto', 'Pruebas', '2014-06-10 14:28:43', '2014-06-10 14:33:19', 2),
-(8, 2, 'fdfas', 'sdsdd', 'fsdfsf', 'Dffff', 'ddd', 'sdd', '2014-06-12 10:31:37', '2014-06-12 10:38:25', 2),
-(10, 2, 'dfafd', 'asfsdaf', 'fddfasdfafads', 'asdfasdffasd', 'asdffdsafsd', 'fsdf', '2014-06-12 10:47:00', '2014-06-12 18:18:12', 2),
-(11, 2, 'fsdfsdf', 'agfsf', 'ffff', 'fdsffasdf', 'sdfsfsggh', 'Gaghash', '2014-06-12 10:47:13', '2014-06-12 10:47:13', NULL);
+(7, 2, 'Prueba 2', 'Prueba para el documento', 'URL larga con sus URIs y todo', 'Test', 'Esperanto', 'Pruebas', '2014-06-10 14:28:43', '2014-06-10 14:33:19', 2);
 
 -- --------------------------------------------------------
 
@@ -216,7 +219,7 @@ INSERT INTO `entradas` (`id`, `user_id`, `title`, `body`, `url`, `categoria`, `i
 
 CREATE TABLE IF NOT EXISTS `groups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
+  `name` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -243,17 +246,17 @@ CREATE TABLE IF NOT EXISTS `mods` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `entrada_id` int(11) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `body` text,
-  `url` varchar(45) DEFAULT NULL,
-  `categoria` varchar(45) DEFAULT NULL,
-  `idiomas` varchar(45) DEFAULT NULL,
-  `modelo_uso` varchar(45) DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `body` text CHARACTER SET latin1 COLLATE latin1_spanish_ci,
+  `url` varchar(45) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `categoria` varchar(45) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `idiomas` varchar(45) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `modelo_uso` varchar(45) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `val_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
 
 --
 -- Volcado de datos para la tabla `mods`
@@ -262,9 +265,10 @@ CREATE TABLE IF NOT EXISTS `mods` (
 INSERT INTO `mods` (`id`, `user_id`, `entrada_id`, `title`, `body`, `url`, `categoria`, `idiomas`, `modelo_uso`, `created`, `modified`, `val_user_id`) VALUES
 (17, 1, 1, '', '', 'garcolal.zz.mu', '', '', '', '2014-06-11 23:07:01', '2014-06-12 18:12:16', 2),
 (18, 2, 7, 'ffdasfasdasd', '', '', '', '', '', '2014-06-12 18:05:41', '2014-06-12 18:05:41', NULL),
-(19, 2, 7, 'ffdasfasdasd', '', '', '', '', '', '2014-06-12 18:06:50', '2014-06-12 18:06:50', NULL),
+(19, 2, 7, 'ffdasfasdasd', '', '', '', '', '', '2014-06-12 18:06:50', '2014-06-13 21:57:41', 1),
 (20, 2, 1, '', '', '', '', '', '', '2014-06-12 18:07:39', '2014-06-12 18:07:39', NULL),
-(21, 2, 10, '', '', 'tururu', '', '', '', '2014-06-12 18:40:55', '2014-06-12 18:42:06', 2);
+(23, 1, 1, 'sdasffasfd', 'fasdf', '', '', '', '', '2014-06-13 21:56:28', '2014-06-13 21:56:28', NULL),
+(25, 1, 7, 'Prueba 2', 'Prueba para el documento', 'URL larga con sus URIs y todo', 'Test', 'Esperanto', 'Pruebas', '2014-06-14 14:24:25', '2014-06-14 14:24:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -274,15 +278,15 @@ INSERT INTO `mods` (`id`, `user_id`, `entrada_id`, `title`, `body`, `url`, `cate
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` char(40) NOT NULL,
-  `nombre_completo` varchar(40) NOT NULL,
+  `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `password` char(40) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `nombre_completo` varchar(40) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `group_id` int(11) NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
 -- Volcado de datos para la tabla `users`
@@ -291,9 +295,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `username`, `password`, `nombre_completo`, `group_id`, `created`, `modified`) VALUES
 (1, 'admin', '9bab92c88ab415e37ec477ba85ad103c8856ca2f', 'admin', 1, '2014-06-04 01:13:54', '2014-06-04 01:13:54'),
 (2, 'manager', '554bf23e40410c035a5ff74feb037a28673e24f8', 'manager', 2, '2014-06-04 01:14:42', '2014-06-10 15:27:40'),
-(3, 'user', 'a68e11c1643ea3e9b6a11676e59b067e9208b3bb', 'user', 3, '2014-06-04 01:14:12', '2014-06-04 01:14:12'),
-(15, 'prueba', 'f200c5693487dfb1304a31783f9e8fde459e2095', 'prueba', 3, '2014-06-05 22:44:42', '2014-06-08 20:47:33'),
-(16, 'Prueba Documento', 'dc23ff1346c88de8993757f0e0b84d41f9eb51a0', 'Prueba Documento', 4, '2014-06-10 15:14:57', '2014-06-10 15:14:57');
+(3, 'user', 'a68e11c1643ea3e9b6a11676e59b067e9208b3bb', 'user', 3, '2014-06-04 01:14:12', '2014-06-15 22:13:26');
 
 -- --------------------------------------------------------
 
