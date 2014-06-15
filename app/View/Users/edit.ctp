@@ -5,13 +5,13 @@
         <?php
         echo $this->Form->hidden('id');
         echo $this->Form->input('username', array(
-                'label' => 'Alias'
+                'label' => 'Alias', 'readonly'=> 'readonly'
             ));
         echo $this->Form->input('nombre_completo', array(
                 'label' => 'Nombre Completo', 'readonly'=> 'readonly'
             ));
         echo $this->Form->input('group_id', array(
-                'label' => 'Grupo', 'readonly'=> 'readonly'
+                'label' => 'Grupo'
             ));
         ?>
     </fieldset>
