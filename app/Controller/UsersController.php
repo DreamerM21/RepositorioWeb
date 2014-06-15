@@ -87,7 +87,7 @@ class UsersController extends AppController {
         if ($this->request->is(array('post', 'put'))) {
                         $data = null;
             $data = array('Entrada' => array(
-                    'id' => $this->request->data['User']['group_id'],
+                    'group_id' => $this->request->data['User']['group_id'],
                 ),
             );
             if ($this->Entrada->save($data)) {
