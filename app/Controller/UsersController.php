@@ -55,10 +55,11 @@ class UsersController extends AppController {
 
             $data = array('User' => array(
                     'username' => $this->request->data['User']['username'],
-                    'password' => $this->request->data['User']['password'],
+//                    'password' => $this->request->data['User']['password'],
+                    'password' => $this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']),
                     'nombre_completo' => $this->request->data['User']['nombre_completo'],
                     'group_id' => $this->data['User']['group_id'] = 4,
-                    ),
+                ),
             );
 
             if ($this->User->save($data)) {
@@ -72,7 +73,6 @@ class UsersController extends AppController {
         $this->set(compact('groups'));
     }
 
-
     /**
      * edit method
      *
@@ -85,7 +85,7 @@ class UsersController extends AppController {
             throw new NotFoundException(__('Usuario no valido'));
         }
         if ($this->request->is(array('post', 'put'))) {
-                       
+
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('El usuario ha sido Modificado.'));
                 return $this->redirect(array('action' => 'index'));
@@ -99,6 +99,7 @@ class UsersController extends AppController {
         $groups = $this->User->Group->find('list');
         $this->set(compact('groups'));
     }
+
 //5f61fcde3ce8e180d149ecd8909481dabfd77c52 
     /**
      * delete method
@@ -171,8 +172,8 @@ class UsersController extends AppController {
 // allow basic users to log out
 
         $this->Acl->allow($group, 'controllers/users/logout');
-$group->id = 4;
-$this->Acl->allow($group, 'controllers/users/logout');
+        $group->id = 4;
+        $this->Acl->allow($group, 'controllers/users/logout');
 // we add an exit to avoid an ugly "missing views" error message
         echo "all done";
         exit;
